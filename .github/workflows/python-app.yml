@@ -50,7 +50,6 @@ jobs:
       run: |
         python3 --version
         python3 source/python-application/generation.py
-        find . -name "*.pyc" -exec git rm {} \;
 
     # Commits all changed files to the repository
     - name: Commit to the repo
