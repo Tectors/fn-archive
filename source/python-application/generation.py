@@ -72,7 +72,7 @@ for index, package in enumerate(chain['data']['dynamicKeys']):
     markdown_content = '  '
     
     for content in pak_content:
-        markdown_content += f'<img src="https://raw.githubusercontent.com/Tectors/Archive/main/source/dependents/referred/{content}.svg" width="100"> '
+        markdown_content += f'<img src="https://raw.githubusercontent.com/Tectors/Archive/master/source/dependents/referred/{content}.svg" width="100"> '
     if pak_content.__len__() > 0:
         markdown_content += '\n'
 
@@ -111,7 +111,7 @@ for manifest in manifests:
         continue
 
     added_manifests.append(manifest)
-    manifest_readme_string += '| {0} | {2} | [{1}](https://github.com/Tectors/Archive/blob/main/manifests/{1}.manifest) |\n'.format(manifest['labelName'], manifest['name'].replace('.manifest', ''), manifest['hash'])
+    manifest_readme_string += '| {0} | {2} | [{1}](https://github.com/Tectors/Archive/blob/master/manifests/{1}.manifest) |\n'.format(manifest['labelName'], manifest['name'].replace('.manifest', ''), manifest['hash'])
 
 # | Variables defined: manifests
 # NOTE: }
@@ -119,7 +119,7 @@ for manifest in manifests:
 # NOTE: {
 
 # This adds in the thumbnail (scale-able file) into the mark-down file
-markdown_content = f'<div style="pointer-events: none">\n  <img style="pointer-events: none" src="https://raw.githubusercontent.com/Tectors/Archive/main/source/dependents/gen.{parsed["version"]}.svg" width="360" height="155">\n<div>' + f'\n\n## Statistics\n> *{chain["data"]["build"]}*\n\n> {chain["data"]["updated"]} | {updated_at}\n'
+markdown_content = f'<div style="pointer-events: none">\n  <img style="pointer-events: none" src="https://raw.githubusercontent.com/Tectors/Archive/master/source/dependents/gen.{parsed["version"]}.svg" width="360" height="155">\n<div>' + f'\n\n## Statistics\n> *{chain["data"]["build"]}*\n\n> {chain["data"]["updated"]} | {updated_at}\n'
 
 # NOTE: Here we get the playlists and get the ones
 playlists = get('https://fortnite-api.com/v1/playlists').json()['data']
@@ -134,7 +134,7 @@ markdown_content += f'\n<details>\n  <summary>Season Thumbnails</summary>\n\n  >
 for playlist in filtered_playlist:
     # Some variables we will need
     showcase_img = playlist['images']['showcase']
-    image = 'https://raw.githubusercontent.com/Tectors/Archive/main/source/dependents/monthly-rotaton/' + save_image(get(showcase_img).content, showcase_img.split('/')[5] + '_' + parsed['version'].replace('.', '_') + '.png')
+    image = 'https://raw.githubusercontent.com/Tectors/Archive/master/source/dependents/monthly-rotaton/' + save_image(get(showcase_img).content, showcase_img.split('/')[5] + '_' + parsed['version'].replace('.', '_') + '.png')
 
     # Add it with a drop-down button
     markdown_content += f'  | [{playlist["name"]}]({image}) | {playlist["id"]} |\n'
