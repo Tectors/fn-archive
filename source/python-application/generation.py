@@ -1,10 +1,5 @@
 #!/usr/bin/python3
 
-# NOTE: We do this to remove those annoying python cache files
-# NOTE: that literally make it make a commit every time the script runs
-import sys
-sys.dont_write_bytecode = True
-
 # NOTE: This is the imports for the file,
 # NOTE: there is a bunch of modules being imported,
 # NOTE: that are made for this file.
