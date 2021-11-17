@@ -92,7 +92,7 @@ release_datetime = datetime.strptime(chain['data']['updated'], '%Y-%m-%dT%M:%S:%
 day = int(chain['data']['updated'].split('T')[0].split('-')[2])
 
 # The date that the update came out
-updated_at = release_datetime.strftime("%B %d, %Y").replace(str(day), ordinal(day)).replace('September', 'Sept').replace('October', 'Oct').replace('August', 'Aug').replace('January', 'Jan').replace('February', 'Feb').replace('December', 'Dec')
+updated_at = release_datetime.strftime("%B %d, %Y").replace(str(day), ordinal(day)).replace('September', 'Sept').replace('October', 'Oct').replace('August', 'Aug').replace('January', 'Jan').replace('February', 'Feb').replace('December', 'Dec').replace('November', 'Nov')
 
 # Generate the scale-able file
 scaleable_generator.generate(open('./source/dependents/templates/source.svg', 'r').read(), parsed, splash, updated_at)
