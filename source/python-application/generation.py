@@ -180,7 +180,7 @@ if possibly_latest_entry:
             '<!-- Replacement (for branch icon ect..)' + 
             content.split('<!-- Replacement (for branch icon ect..)')[1].split('-->')[0] + '-->', '').replace(
         '</div>\n                        \n                    </h2>',
-        '</div>\n                    </h2>').replace('<!-- {ORG_REPLACEMENT_START} -->\n', '<!-- Completed badge replacement -->')
+        '</div>\n                    </h2>').replace('<!-- {ORG_REPLACEMENT_START} -->\n', '<!-- Completed badge replacement -->').replace('//', '/')
 
         with open(possibly_latest_entry, 'w') as entry:
             entry.write(content)
