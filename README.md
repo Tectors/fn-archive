@@ -2,7 +2,7 @@
 
 An easy and creative way to view encryption keys and items in each update of the game [Fortnite](https://www.epicgames.com/fortnite/en-US/home), by using creatively (and automatically) made mark-down files.
 
-[![19.01](https://github.com/Tectors/Archive/blob/master/source/dependents/gen.19.01.svg)](https://github.com/Tectors/Archive/blob/master/tree/19.01.md)
+[![18.40](https://github.com/Tectors/Archive/blob/master/source/dependents/gen.18.40.svg)](https://github.com/Tectors/Archive/blob/master/tree/18.40.md)
 
 # How is this automated?
 
