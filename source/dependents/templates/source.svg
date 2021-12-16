@@ -17,6 +17,8 @@
         fill: none;
         stroke: rgb(88 166 255);
         padding: 16px !important;
+        width: calc(100% - 230px);
+        height: calc(100% - 45px);
         rx: 6;
         ry: 6;
         x: 5;
