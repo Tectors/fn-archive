@@ -31,7 +31,7 @@ from datetime import datetime
 # NOTE: 4. Adds the scale-able file as the first element of the README
 # NOTE: 5. Get's the keys and sorts them numerically
 # NOTE: 6. Adds the keys into the README with the items
-# NOTE: 7. Writes the README file into tree/
+# NOTE: 7. Writes the README file into tree
 # NOTE:
 # NOTE: That is basically what it does in a nutshell
 # NOTE: Each part is labled if you are needing help
@@ -45,28 +45,28 @@ drop_down = '<details>\n  <summary>{0}</summary>\n\n{1}</details>\n\n'
 # NOTE: Request keys, sort the keys and store them at a later use
 # NOTE: {
 
-chain = get('https://fortnite-api.com/v2/aes?keyFormat=hex').json()
+chain = get('https://benbot.app/api/v1/aes').json()
 
 # Parsing the build version will give us more information about the update
-parsed = parse_build_version(chain['data']['build'])
+parsed = parse_build_version(chain['version'])
 
 # Store some information that is obtained from the response
 dynamicKeys = []
 
 # NOTE: Since the dynamicKeys array doesn't include the main key, so we have to add it manually
-markdown_keys += f'> 0x{chain["data"]["mainKey"].upper()}\n\n'
-dynamicKeys.append('0x' + chain["data"]["mainKey"].upper())
+markdown_keys += f'> {chain["mainKey"].upper()}\n\n'
+dynamicKeys.append('0x' + chain["mainKey"].upper())
 
-for index, package in enumerate(chain['data']['dynamicKeys']):
-    key = '0x' + package['key'].upper()
+for package in chain['dynamicKeys'].keys():
+    key = chain['dynamicKeys'][package]
 
     # If it is not a .pak file or it's a duplicate
-    if '.pak' not in package['pakFilename'] or "optional" in package['pakFilename'] and chain['data']['dynamicKeys'][index - 1]['pakGuid'] == package['pakGuid'] if len(chain['data']['dynamicKeys']) > index + 1 else True:
-        continue
+    # if '.pak' not in package['pakFilename'] or "optional" in package['pakFilename'] and chain['data']['dynamicKeys'][index - 1]['pakGuid'] == package['pakGuid'] if len(chain['data']['dynamicKeys']) > index + 1 else True:
+    #     continue
     dynamicKeys.append(key)
 
     # Add each scale-able content of the package
-    pak_content = add_pak_content(int(package['pakFilename'].split('-')[0].replace('optional', '').replace('pakchunk', '')))
+    pak_content = add_pak_content(int(package.split('-')[0].replace('optional', '').replace('pakchunk', '')))
 
     # The pak-content in a string used for the listing inside of the drop-down
     markdown_content = '  '
@@ -76,7 +76,9 @@ for index, package in enumerate(chain['data']['dynamicKeys']):
     if pak_content.__len__() > 0:
         markdown_content += '\n'
 
-    markdown_keys += drop_down.format(package['pakFilename'], f'  > FortniteGame/Content/Paks/{package["pakFilename"]}\n\n  > {key}\n  > {package["pakGuid"]}\n\n{markdown_content}')
+    markdown_keys += drop_down.format(package, f'  > FortniteGame/Content/Paks/{package}\n\n  > {key}\n\n{markdown_content}')
+
+print(markdown_keys)
 
 # | Variables defined: dynamicKeys, parsed, chain
 # NOTE: }
@@ -86,13 +88,10 @@ for index, package in enumerate(chain['data']['dynamicKeys']):
 splash = splash_module.get_splash(parsed['version'])
 
 # The release data in the datetime object, used to convert
-release_datetime = datetime.strptime(chain['data']['updated'], '%Y-%m-%dT%M:%S:%fZ')
-
-# The day number of the update
-day = int(chain['data']['updated'].split('T')[0].split('-')[2])
+release_datetime = datetime.today()
 
 # The date that the update came out
-updated_at = release_datetime.strftime("%B %d, %Y").replace(str(day), ordinal(day)).replace('September', 'Sept').replace('October', 'Oct').replace('August', 'Aug').replace('January', 'Jan').replace('February', 'Feb').replace('December', 'Dec').replace('November', 'Nov')
+updated_at = release_datetime.strftime("%B %d, %Y").replace(str(release_datetime.day), ordinal(release_datetime.day)).replace('September', 'Sept').replace('October', 'Oct').replace('August', 'Aug').replace('January', 'Jan').replace('February', 'Feb').replace('December', 'Dec').replace('November', 'Nov')
 
 # Generate the scale-able file
 scaleable_generator.generate(open('./source/dependents/templates/source.svg', 'r').read(), parsed, splash, updated_at)
@@ -119,7 +118,7 @@ for manifest in manifests:
 # NOTE: {
 
 # This adds in the thumbnail (scale-able file) into the mark-down file
-markdown_content = f'<div style="pointer-events: none">\n  <img style="pointer-events: none" src="https://raw.githubusercontent.com/Tectors/Archive/master/source/dependents/gen.{parsed["version"]}.svg" width="360" height="155">\n<div>' + f'\n\n## Statistics\n> *{chain["data"]["build"]}*\n\n> {chain["data"]["updated"]} | {updated_at}\n'
+markdown_content = f'<div style="pointer-events: none">\n  <img style="pointer-events: none" src="https://raw.githubusercontent.com/Tectors/Archive/master/source/dependents/gen.{parsed["version"]}.svg" width="360" height="155">\n<div>' + f'\n\n## Statistics\n> *{chain["version"]}*\n\n> {datetime.now()} | {updated_at}\n'
 
 # NOTE: Here we get the playlists and get the ones
 playlists = get('https://fortnite-api.com/v1/playlists').json()['data']
