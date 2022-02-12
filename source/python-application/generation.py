@@ -59,10 +59,10 @@ dynamicKeys.append('0x' + chain["mainKey"].upper())
 
 for package in chain['dynamicKeys'].keys():
     key = chain['dynamicKeys'][package]
+    
+    if "." not in package:
+        continue
 
-    # If it is not a .pak file or it's a duplicate
-    # if '.pak' not in package['pakFilename'] or "optional" in package['pakFilename'] and chain['data']['dynamicKeys'][index - 1]['pakGuid'] == package['pakGuid'] if len(chain['data']['dynamicKeys']) > index + 1 else True:
-    #     continue
     dynamicKeys.append(key)
 
     # Add each scale-able content of the package
