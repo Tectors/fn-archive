@@ -129,12 +129,12 @@
 
     .image > img {
         position: absolute;
-        top: -20px;
+        top: 23%;
         bottom: 0;
-        left: 0;
+        left: -66%;
         right: 0;
         margin: auto;
-        width: 100%;
+        width: 220%;
     }
 
     .github-icon {
