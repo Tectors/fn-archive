@@ -16,6 +16,9 @@ It is automated using [Github Actions](https://docs.github.com/en/actions) and b
 **Where is it getting it's information from?**:
 <br> [Fortnite-API](https://fortnite-api.com/) <br>*A powerful Fortnite API containing data of all cosmetics, daily shop, player stats, news, gamemodes and more!*
 
+**Secondary API for Technical Information**:
+<br> [Fortnite-Central](https://twitter.com/FNCentralBot/) <br>*Used for AES keys, and possibly in the future for mappings.*
+
 # Why should I use this?
 
 **Why doesn't it contain other versions?**:
