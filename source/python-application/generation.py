@@ -45,28 +45,27 @@ drop_down = '<details>\n  <summary>{0}</summary>\n\n{1}</details>\n\n'
 # NOTE: Request keys, sort the keys and store them at a later use
 # NOTE: {
 
-chain = get('https://benbot.app/api/v1/aes').json()
+mappings = get('https://fortnitecentral.gmatrixgames.ga/api/v1/mappings').json()
+
+chain = get('https://fortnitecentral.gmatrixgames.ga/api/v1/aes').json()
 
 # Parsing the build version will give us more information about the update
-parsed = parse_build_version(chain['version'])
+parsed = parse_build_version(mappings[0]["fileName"])
 
 # Store some information that is obtained from the response
 dynamicKeys = []
 
 # NOTE: Since the dynamicKeys array doesn't include the main key, so we have to add it manually
-markdown_keys += f'> {chain["mainKey"].upper()}\n\n'
-dynamicKeys.append('0x' + chain["mainKey"].upper())
+markdown_keys += f'> {chain["mainKey"]}\n\n'
+dynamicKeys.append(chain["mainKey"])
 
-for package in chain['dynamicKeys'].keys():
-    key = chain['dynamicKeys'][package]
-    
-    if "." not in package:
-        continue
+for package in chain['dynamicKeys']:
+    key = package['key']
 
     dynamicKeys.append(key)
 
     # Add each scale-able content of the package
-    pak_content = add_pak_content(int(package.split('-')[0].replace('optional', '').replace('pakchunk', '')))
+    pak_content = add_pak_content(int(package['name'].split('-')[0].replace('optional', '').replace('pakchunk', '')))
 
     # The pak-content in a string used for the listing inside of the drop-down
     markdown_content = '  '
@@ -76,9 +75,7 @@ for package in chain['dynamicKeys'].keys():
     if pak_content.__len__() > 0:
         markdown_content += '\n'
 
-    markdown_keys += drop_down.format(package, f'  > FortniteGame/Content/Paks/{package}\n\n  > {key}\n\n{markdown_content}')
-
-print(markdown_keys)
+    markdown_keys += drop_down.format(package['name'], f'  > FortniteGame/Content/Paks/{package["name"]}\n\n  > {key}\n\n{markdown_content}')
 
 # | Variables defined: dynamicKeys, parsed, chain
 # NOTE: }
@@ -118,7 +115,7 @@ for manifest in manifests:
 # NOTE: {
 
 # This adds in the thumbnail (scale-able file) into the mark-down file
-markdown_content = f'<div style="pointer-events: none">\n  <img style="pointer-events: none" src="https://raw.githubusercontent.com/Tectors/Archive/master/source/dependents/gen.{parsed["version"]}.svg" width="360" height="155">\n<div>' + f'\n\n## Statistics\n> *{chain["version"]}*\n\n> {datetime.now()} | {updated_at}\n'
+markdown_content = f'<div style="pointer-events: none">\n  <img style="pointer-events: none" src="https://raw.githubusercontent.com/Tectors/Archive/master/source/dependents/gen.{parsed["version"]}.svg" width="360" height="155">\n<div>' + f'\n\n## Statistics\n> *{mappings[0]["fileName"]}*\n\n> {datetime.now()} | {updated_at}\n'
 
 # NOTE: Here we get the playlists and get the ones
 playlists = get('https://fortnite-api.com/v1/playlists').json()['data']
