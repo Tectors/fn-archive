@@ -6,11 +6,12 @@
     <style xmlns="" lang="en" type="text/css" id="dark-mode-native-style"/>
 
     <!-- Custom style -->
-    <style>
+<style>
     svg {
         font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
         font-size: 14px;
         line-height: 1.5;
+        background:black;
     }
 
     .outliner {
@@ -42,6 +43,53 @@
         }
         to {
             transform: scale(1);
+        }
+    }
+
+    @keyframes ImageV2 {
+        0% {
+            position: absolute;
+            width: 381px;
+            height: 373px;
+            border: 1px solid rgb(88 166 255);
+            border-radius: 0px;
+            right: 0;
+            overflow: hidden;
+            transform: scale(1);
+            left: -37px;
+            top: -15px;
+
+        }
+        05% {
+            position: absolute;
+            width: 381px;
+            height: 373px;
+            border: 1px solid rgb(88 166 255);
+            border-radius: 0px;
+            right: 0;
+            overflow: hidden;
+            transform: scale(1);
+            left: -37px;
+            top: -15px; 
+        }
+        50% {
+            height: 10px;
+            top: 55px;
+            border-radius: 1px;
+
+        }
+        to {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 1px solid rgb(88 166 255);
+            border-radius: 6px;
+            right: 0;
+            overflow: hidden;
+            transform: scale(1);
+            left: 144px;
+            top: 31px;
+
         }
     }
 
@@ -116,8 +164,6 @@
         position: absolute;
         width: 100px;
         height: 100px;
-        <!-- background: #161B22; -->
-        <!-- border: 1px solid #30363D; -->
         border: 1px solid rgb(88 166 255);
         border-radius: 6px;
         right: 0;
@@ -125,6 +171,7 @@
         transform: scale(1);
         left: 144px;
         top: 31px;
+        animation: 2s 1 alternate ImageV2;
     }
 
     .image > img {
@@ -173,10 +220,6 @@
 
         <g xmlns="http://www.w3.org/2000/svg">
             <foreignObject xmlns="http://www.w3.org/2000/svg" x="23" y="26.5" width="318" height="176">
-                <div xmlns="http://www.w3.org/1999/xhtml" class="image">
-                    <img src="{4}"></img>
-                </div>
-
                 <div xmlns="http://www.w3.org/1999/xhtml" class="title-parent">
                     <h2 class="title">
                         {0}
@@ -186,7 +229,11 @@
                         <span>{1}</span>
                         <span>{2}</span>
                     </div>
-                </div>  
+                </div>
+                
+                <div xmlns="http://www.w3.org/1999/xhtml" class="image">
+                    <img src="{4}"></img>
+                </div>
             </foreignObject>
         </g>
     </g>
