@@ -2,7 +2,7 @@
 
 An easy and creative way to view encryption keys and items in each update of the game [Fortnite](https://www.epicgames.com/fortnite/en-US/home), by using creatively (and automatically) made mark-down files.
 
-[![{PARSED_VERSION}](https://github.com/Tectors/Archive/blob/master/source/dependents/gen.{PARSED_VERSION}.svg)](https://github.com/Tectors/Archive/blob/master/tree/{PARSED_VERSION}.md)
+[![21.30](https://github.com/Tectors/Archive/blob/master/source/dependents/gen.21.30.svg)](https://github.com/Tectors/Archive/blob/master/tree/21.30.md)
 
 # How is this automated?
 
@@ -14,7 +14,7 @@ It is automated using [Github Actions](https://docs.github.com/en/actions) and b
 <br> It uses a [python application file](https://github.com/Tectors/Archive/blob/main/.github/workflows/python-app.yml) that'll command the actions to run each specified amount of minutes.<br/>
 
 **Where is it getting it's information from?**:
-<br> [Fortnite-API](https://fortnite-api.com/) <br>*A powerful Fortnite API containing data of all cosmetics, daily shop, player stats, news, gamemodes and more!*
+<br> [Fortnite-Central](https://t.co/cdzweItxer) <br>*API for Fortnite.*
 
 # Why should I use this?
 
@@ -39,7 +39,7 @@ It is automated using [Github Actions](https://docs.github.com/en/actions) and b
 <br> The source files that [Github Actions](https://docs.github.com/en/actions) are running Python are in the scripting folder, the main file that it runs is the [generation.py](https://github.com/Tectors/Archive/blob/master/source/python-application/generation.py) file.
 
 **Where is the Scalable Vector assets at?**:
-<br> The assets (svg) for the mark-down files are located in the *storage* folder, [click here to the latest one.](https://github.com/Tectors/Archive/blob/master/source/dependents/gen.{PARSED_VERSION}.svg)
+<br> The assets (svg) for the mark-down files are located in the *storage* folder, [click here to the latest one.](https://github.com/Tectors/Archive/blob/master/source/dependents/gen.21.30.svg)
 
 **Where did you get those icons from?**: <br>
 We use [octicon icons](https://primer.style/octicons/) to style our mark-down files and SVGs as they look pretty, and pretty good.
