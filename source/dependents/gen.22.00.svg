@@ -59,7 +59,7 @@
             top: -15px;
 
         }
-        05% {
+        14% {
             position: absolute;
             width: 381px;
             height: 373px;
@@ -89,6 +89,38 @@
             left: 144px;
             top: 31px;
 
+        }
+    }
+
+    @keyframes ImageV3 {
+        0% {
+            position: absolute;
+            top: 45%;
+            bottom: 0;
+            left: -79%;
+            right: 0;
+            margin: auto;
+            width: 258%;
+        }
+        14% {
+            position: absolute;
+            top: 45%;
+            bottom: 0;
+            left: -79%;
+            right: 0;
+            margin: auto;
+            width: 258%;
+        }
+        50% {
+        }
+        to {
+            position: absolute;
+            top: 35%;
+            bottom: 0;
+            left: -79%;
+            right: 0;
+            margin: auto;
+            width: 258%;
         }
     }
 
@@ -181,6 +213,7 @@
         right: 0;
         margin: auto;
         width: 258%;
+        animation: 2s 1 alternate ImageV3;
     }
 
     .github-icon {
