@@ -88,7 +88,7 @@ splash = splash_module.get_splash(parsed['version'])
 release_datetime = datetime.today()
 
 # The date that the update came out
-updated_at = release_datetime.strftime("%B %d, %Y").replace(str(release_datetime.day), ordinal(release_datetime.day)).replace('September', 'Sept').replace('October', 'Oct').replace('August', 'Aug').replace('January', 'Jan').replace('February', 'Feb').replace('December', 'Dec').replace('November', 'Nov')
+updated_at = release_datetime.strftime("%B %d, %Y").replace('September', 'Sept').replace('October', 'Oct').replace('August', 'Aug').replace('January', 'Jan').replace('February', 'Feb').replace('December', 'Dec').replace('November', 'Nov')
 
 # Generate the scale-able file
 scaleable_generator.generate(open('./source/dependents/templates/source.svg', 'r').read(), parsed, splash, updated_at)
