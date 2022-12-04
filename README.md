@@ -2,7 +2,7 @@
 
 An easy and creative way to view encryption keys and items in each update of the game [Fortnite](https://www.epicgames.com/fortnite/en-US/home), by using creatively (and automatically) made mark-down files.
 
-[![22.40](https://github.com/Tectors/Archive/blob/master/source/dependents/gen.22.40.svg)](https://github.com/Tectors/Archive/blob/master/tree/22.40.md)
+[![23.00](https://github.com/Tectors/Archive/blob/master/source/dependents/gen.23.00.svg)](https://github.com/Tectors/Archive/blob/master/tree/23.00.md)
 
 # How is this automated?
 
@@ -39,7 +39,7 @@ It is automated using [Github Actions](https://docs.github.com/en/actions) and b
 <br> The source files that [Github Actions](https://docs.github.com/en/actions) are running Python are in the scripting folder, the main file that it runs is the [generation.py](https://github.com/Tectors/Archive/blob/master/source/python-application/generation.py) file.
 
 **Where is the Scalable Vector assets at?**:
-<br> The assets (svg) for the mark-down files are located in the *storage* folder, [click here to the latest one.](https://github.com/Tectors/Archive/blob/master/source/dependents/gen.22.40.svg)
+<br> The assets (svg) for the mark-down files are located in the *storage* folder, [click here to the latest one.](https://github.com/Tectors/Archive/blob/master/source/dependents/gen.23.00.svg)
 
 **Where did you get those icons from?**: <br>
 We use [octicon icons](https://primer.style/octicons/) to style our mark-down files and SVGs as they look pretty, and pretty good.
