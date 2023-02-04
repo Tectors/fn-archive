@@ -45,9 +45,9 @@ drop_down = '<details>\n  <summary>{0}</summary>\n\n{1}</details>\n\n'
 # NOTE: Request keys, sort the keys and store them at a later use
 # NOTE: {
 
-mappings = get('https://fortnitecentral.gmatrixgames.ga/api/v1/mappings').json()
+mappings = get('https://fortnitecentral.genxgames.gg/api/v1/mappings').json()
 
-chain = get('https://fortnitecentral.gmatrixgames.ga/api/v1/aes').json()
+chain = get('https://fortnitecentral.genxgames.gg/api/v1/aes').json()
 
 # Parsing the build version will give us more information about the update
 parsed = parse_build_version(mappings[0]["fileName"])
