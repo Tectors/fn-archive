@@ -11,6 +11,7 @@ import modules.splash as splash_module
 import modules.mappings as mappings_module
 
 from requests import get
+from os import path, makedirs
 
 # Global functions used
 from modules.global_functions import parse_build_version, add_pak_content, save_image
@@ -53,7 +54,7 @@ chain = get('https://fortnitecentral.genxgames.gg/api/v1/aes').json()
 # Parsing the build version will give us more information about the update
 parsed = parse_build_version(mappings[0]["fileName"])
 
-update = (r".\source\dependents\gen." + parsed['version'] + ".svg") in glob.glob(r'.\source\dependents\gen.*.svg')
+update = path.exists("./source/dependents/gen." + parsed['version'] + ".svg")
 text = ""
 
 if update:
@@ -108,7 +109,7 @@ try:
 
     # If already exists, don't do anything
     # NOTE: this completely removes bloated commits
-    if((r".\source\dependents\gen." + parsed['version'] + ".svg") not in glob.glob(r'.\source\dependents\gen.*.svg')):
+    if not path.exists("./source/dependents/gen." + parsed['version'] + ".svg"):
         # Generate the scale-able file
         scaleable_generator.generate(open('./source/dependents/templates/source.svg', 'r').read(), parsed, splash, updated_at)
 except:
