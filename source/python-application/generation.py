@@ -90,7 +90,7 @@ for package in chain['dynamicKeys']:
     if pak_content.__len__() > 0:
         markdown_content += '\n'
 
-    markdown_keys += drop_down.format(package['name'], f' > \n    {key}\n\n{markdown_content}')
+    markdown_keys += drop_down.format(package['name'], f' > \n    {key}\n    KEYCHAIN: {package["keychain"]}\n\n{markdown_content}')
 
 # | Variables defined: dynamicKeys, parsed, chain
 # NOTE: }
