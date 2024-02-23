@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128"><link xmlns="" type="text/css" rel="stylesheet" id="dark-mode-custom-link"/><link xmlns="" type="text/css" rel="stylesheet" id="dark-mode-general-link"/><style xmlns="" lang="en" type="text/css" id="dark-mode-custom-style"/><style xmlns="" lang="en" type="text/css" id="dark-mode-native-style"/><link xmlns="" type="text/css" rel="stylesheet" id="dark-mode-custom-link"/><link xmlns="" type="text/css" rel="stylesheet" id="dark-mode-general-link"/><style xmlns="" lang="en" type="text/css" id="dark-mode-custom-style"/><style xmlns="" lang="en" type="text/css" id="dark-mode-native-style"/>
+    <!-- Github styles -->
+    <link xmlns="" type="text/css" rel="stylesheet" id="dark-mode-custom-link"/>
+    <link xmlns="" type="text/css" rel="stylesheet" id="dark-mode-general-link"/>
+    <style xmlns="" lang="en" type="text/css" id="dark-mode-custom-style"/>
+    <style xmlns="" lang="en" type="text/css" id="dark-mode-native-style"/>
+
+    <!-- Custom style -->
+    <style>
+    svg {
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .border {
+        <!-- fill: #0d1117; -->
+        fill: none;
+        <!-- stroke: #30363D; -->
+        stroke: rgb(88 166 255);
+        width: calc(100% - 230px);
+        height: calc(100% - 45px);
+        rx: 6;
+        ry: 6;
+        x: 5;
+        y: 5;
+        x: 23;
+        y: 26.5;
+    }
+
+    @keyframes example {
+        from {
+            left: 250px;
+        }
+        to {
+            left: 0;
+        }
+    }
+
+    @keyframes scaleUp {
+        from {
+        transform: scale(0);
+        }
+        to {
+        transform: scale(1);
+        }
+    }
+
+    .title {
+        margin-top: 0;
+        margin-bottom: 0.05em;
+        line-height: 24px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #c9d1d9;
+        fill: rgb(36, 41, 46);
+    }
+
+    .clickable {
+        position: relative;
+        background: rgb(88 166 255 / 12%);
+        color: #58a6ff;
+        border-radius: 8px;
+        padding: 6px;
+        font: 12px ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+        margin: 5px;
+    }
+
+    .list {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: 48px;
+        left: 0;
+        color: #58a6ff;
+        border-top: 1px solid #30363D;
+    }
+
+    .property {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .property &gt; span {
+        top: 15px;
+        position: relative;
+        left: 220px;
+    }
+
+    .property &gt; span:nth-child(1) {
+        color: #8b949e;
+        x: 28px;
+        y: 10px;
+        position: relative;
+        left: 0;
+    }
+
+    .property &gt; span:nth-child(2) {
+        font-size: 14px;
+        color: #c9d1d9;
+        left: 0;
+    }
+
+    a {
+        color: initial;
+        outline: none;
+        text-decoration: none;
+    }
+
+    .image {
+        width: 100px;
+        height: 100px;
+        <!-- background: #161B22; -->
+        <!-- border: 1px solid #30363D; -->
+        border: 1px solid rgb(88 166 255);
+        border-radius: 6px;
+        right: 0;
+        position: absolute;
+        top: 0;
+        overflow: hidden;
+        transform: scale(1);
+    }
+
+    .image &gt; img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 100%;
+        -webkit-filter: drop-shadow(1px 1px 0 rgb(88 166 255)) drop-shadow(-1px -1px 0 white) drop-shadow(0px 0px 0 rgb(88 166 255));
+        filter: drop-shadow(1px 1px 0 rgb(88 166 255)) drop-shadow(-1px -1px 0 white) drop-shadow(0px 0px 0 rgb(88 166 255));
+    }
+
+    .github-icon {
+        fill: #58a6ff;
+        position: relative;
+        left: 2px;
+        top: -2px;
+    }
+    </style>
+
+    <g xmlns="http://www.w3.org/2000/svg">
+        <!-- Let's place the border -->
+        <g xmlns="http://www.w3.org/2000/svg">
+            <foreignObject xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="128" height="128">
+                <div xmlns="http://www.w3.org/1999/xhtml" class="image" style="position: absolute;left: 10px;top: 14px;">
+                    <img src="data:image/png;base64,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"/>
+                </div>
+            </foreignObject>
+        </g>
+    </g>
+</svg>
