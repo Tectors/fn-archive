@@ -74,9 +74,9 @@ else:
     
     for element in temp:
         name = element['name']
-        _text += f'+ {name.split(".")[0]} ({element["size"]["formatted"]})\n'
+        _text += f'+ {name.split(".")[0]} ({element["size"]["formatted"]}) '
 
-    _text = _text.rsplit('\n', 1)[0]
+    _text = _text.rsplit(' ', 1)[0]
 
     with open("./source/dependents/referred/" + parsed['version'] + ".json", "w", encoding="utf-8") as f:
         f.write(json.dumps(chain, indent=4, sort_keys=True))
