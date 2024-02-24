@@ -74,7 +74,7 @@ else:
     
     for element in temp:
         name = element['name']
-        _text += f'+ {name.split(".")[0]}\n'
+        _text += f'{name.split(".")[0]}\n'
 
     _text = _text.rsplit('\n', 1)[0]
 
