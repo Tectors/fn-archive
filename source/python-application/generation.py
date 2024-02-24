@@ -23,6 +23,8 @@ import modules.svg as scaleable_generator
 import glob
 from datetime import datetime
 
+import json
+
 # NOTE: This file is used as the main exeuction for the generation
 # NOTE: 
 # NOTE: The actions are done in the order inside of this python file:
@@ -40,8 +42,11 @@ from datetime import datetime
 
 # These will make writing mark-down files eaiser
 markdown_keys = ''
-manifest_readme_string = '## *Manifests*\n| Label | Hash | Route |\n| - | - | - |\n'
+manifest_readme_string_start = '## *Manifests*\n'
+manifest_readme_string = '| Label | Hash | Route |\n| - | - | - |\n'
 mappings_readme_string = "\n| Label | Compression Method | .usmap |\n| - | - | - |\n"
+
+_text = ''
 
 drop_down = '<details>\n  <summary>{0}</summary>\n\n{1}</details>\n\n'
 
@@ -54,6 +59,28 @@ chain = get('https://fortnitecentral.genxgames.gg/api/v1/aes').json()
 # Parsing the build version will give us more information about the update
 parsed = parse_build_version(mappings[0]["fileName"])
 
+if not path.exists("./source/dependents/referred/" + parsed['version'] + ".json"):
+    with open("./source/dependents/referred/" + parsed['version'] + ".json", "w", encoding="utf-8") as f:
+        f.write(json.dumps(chain, indent=4, sort_keys=True))
+else:
+    previous_model = json.load(open("./source/dependents/referred/" + parsed['version'] + ".json", 'r'))
+    prev_dynamicKeys = previous_model['dynamicKeys']
+    dynamicKeys = chain['dynamicKeys']
+
+    temp = []
+    for element in dynamicKeys:
+        if element not in prev_dynamicKeys:
+            temp.append(element)
+    
+    for element in temp:
+        name = element['name']
+        _text += f'+ {name.split(".")[0]} ({element["size"]["formatted"]})\n'
+
+    _text = _text.rsplit('\n', 1)[0]
+
+    with open("./source/dependents/referred/" + parsed['version'] + ".json", "w", encoding="utf-8") as f:
+        f.write(json.dumps(chain, indent=4, sort_keys=True))
+
 update = path.exists("./source/dependents/gen." + parsed['version'] + ".svg")
 text = ""
 
@@ -65,9 +92,6 @@ else:
 import os
 env_file = os.getenv('GITHUB_ENV')
 
-with open(env_file, "a") as myfile:
-    myfile.write(f"version_build={text}{parsed['version'] + '-CL-' + parsed['netcl']}")
-
 # Store some information that is obtained from the response
 dynamicKeys = []
 
@@ -75,8 +99,14 @@ dynamicKeys = []
 markdown_keys += f'> *{chain["mainKey"]}*\n\n'
 dynamicKeys.append(chain["mainKey"])
 
+# (Value="0xBF5B024ABB2023441B359FB8BF99659705B59FB33D75A817E06B3163BFE847FE",Guid="0D8B24BCF7F9C0293FFE1264A5D05613")
+editor_pref = '('
+
 for package in chain['dynamicKeys']:
     key = package['key']
+
+    __text = f"(Value=\"{key}\",Guid=\"{package['guid']}\")"
+    editor_pref += __text + ','
 
     dynamicKeys.append(key)
 
@@ -92,6 +122,8 @@ for package in chain['dynamicKeys']:
         markdown_content += '\n'
 
     markdown_keys += drop_down.format(package['name'], f' > \n    {key}\n    KEYCHAIN: {package["keychain"]}\n\n{markdown_content}')
+
+manifest_readme_string_start += f"<details>\n  <summary>Editor Preferences</summary>\n\n > \n    {editor_pref.rsplit(',', 1)[0] + ')'}\n</details>\n\n"
 
 # | Variables defined: dynamicKeys, parsed, chain
 # NOTE: }
@@ -135,6 +167,8 @@ for manifest in manifests:
 
 for mapping in mappings:
     mappings_readme_string += f'| *{mapping["meta"]["platform"]}* | {mapping["meta"]["compressionMethod"]} | [{mapping["url"].split("/")[-1]}](https://github.com/Tectors/Archive/blob/master/manifests/mappings/{mapping["url"].split("/")[-1]}) |\n'
+
+manifest_readme_string = manifest_readme_string_start + manifest_readme_string
 
 # | Variables defined: manifests
 # NOTE: }
@@ -190,3 +224,7 @@ if possibly_latest_entry:
 
         with open(possibly_latest_entry, 'w') as entry:
             entry.write(content)
+
+with open(env_file, "a") as myfile:
+    myfile.write(f"version_build={text}{parsed['version'] + '-CL-' + parsed['netcl']}\n")
+    myfile.write(f"additions={_text}")
