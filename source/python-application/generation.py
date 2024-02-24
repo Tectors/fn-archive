@@ -74,7 +74,7 @@ else:
     
     for element in temp:
         name = element['name']
-        _text += f'{name.split(".")[0].split("-")[0]}\n'
+        _text += f'+ {name.split(".")[0]} ({element["size"]["formatted"]})\n'
 
     _text = _text.rsplit('\n', 1)[0]
 
@@ -226,4 +226,4 @@ if possibly_latest_entry:
             entry.write(content)
 
 with open(env_file, "a") as myfile:
-    myfile.write(f"version_build={text}{parsed['version'] + '-CL-' + parsed['netcl']}\nadditions=test")
+    myfile.write(f"version_build={text}{parsed['version'] + '-CL-' + parsed['netcl']}")
