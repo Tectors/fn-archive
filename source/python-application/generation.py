@@ -227,4 +227,4 @@ if possibly_latest_entry:
 
 with open(env_file, "a") as myfile:
     myfile.write(f"version_build={text}{parsed['version'] + '-CL-' + parsed['netcl']}\n")
-    myfile.write(f"additions={_text}")
+    myfile.write(f"additions=\"{_text}\"")
