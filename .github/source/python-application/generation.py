@@ -117,7 +117,7 @@ for package in chain['dynamicKeys']:
     markdown_content = '  '
     
     for content in pak_content:
-        markdown_content += f'<img src="https://raw.githubusercontent.com/Tectors/Archive/master/.github/source/dependents/referred/{content}.svg" width="100"> '
+        markdown_content += f'<img src="https://raw.githubusercontent.com/Tectors/fn-archive/master/.github/source/dependents/referred/{content}.svg" width="100"> '
     if pak_content.__len__() > 0:
         markdown_content += '\n'
 
@@ -163,10 +163,10 @@ for manifest in manifests:
         continue
 
     added_manifests.append(manifest)
-    manifest_readme_string += '| *{0}* | {2} | [{1}](https://github.com/Tectors/Archive/blob/master/manifests/{1}.manifest) |\n'.format(manifest['labelName'], manifest['name'].replace('.manifest', ''), manifest['hash'])
+    manifest_readme_string += '| *{0}* | {2} | [{1}](https://github.com/Tectors/fn-archive/blob/master/manifests/{1}.manifest) |\n'.format(manifest['labelName'], manifest['name'].replace('.manifest', ''), manifest['hash'])
 
 for mapping in mappings:
-    mappings_readme_string += f'| *{mapping["meta"]["platform"]}* | {mapping["meta"]["compressionMethod"]} | [{mapping["url"].split("/")[-1]}](https://github.com/Tectors/Archive/blob/master/manifests/mappings/{mapping["url"].split("/")[-1]}) |\n'
+    mappings_readme_string += f'| *{mapping["meta"]["platform"]}* | {mapping["meta"]["compressionMethod"]} | [{mapping["url"].split("/")[-1]}](https://github.com/Tectors/fn-archive/blob/master/manifests/mappings/{mapping["url"].split("/")[-1]}) |\n'
 
 manifest_readme_string = manifest_readme_string_start + manifest_readme_string
 
@@ -178,7 +178,7 @@ manifest_readme_string = manifest_readme_string_start + manifest_readme_string
 versioning = parsed['type'] + "-" + parsed['version'] + "-CL-" + parsed['netcl'] + '-Windows'
 
 # This adds in the thumbnail (scale-able file) into the mark-down file
-markdown_content = f'<a href="#manifests">\n  <img style="pointer-events: none" src="https://raw.githubusercontent.com/Tectors/Archive/master/.github/source/dependents/gen.{parsed["version"]}.svg" width="360" height="155"\\>\n</a>\n\n >  \n  \n  > {versioning}\n'
+markdown_content = f'<a href="#manifests">\n  <img style="pointer-events: none" src="https://raw.githubusercontent.com/Tectors/fn-archive/master/.github/source/dependents/gen.{parsed["version"]}.svg" width="360" height="155"\\>\n</a>\n\n >  \n  \n  > {versioning}\n'
 markdown_content += '\n' + manifest_readme_string + '\n' + mappings_readme_string + '\n---\n\n' + markdown_keys
 
 # NOTE: }
