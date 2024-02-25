@@ -1,6 +1,6 @@
 # ![](/source/readme-content/name.svg) ![](/source/readme-content/icon.svg)
 
-An easy and creative way to view encryption keys and items in each update of the game [Fortnite](https://www.epicgames.com/fortnite/en-US/home), by using creatively (and automatically) made mark-down files.
+Archive of [Fortnite](https://www.epicgames.com/fortnite/en-US/home) manifests, encryption keys, mappings and meta-data updated automatically using [Github Actions](https://docs.github.com/en/actions). Using nested mark-down files.
 
 [![28.30](https://github.com/Tectors/Archive/blob/master/source/dependents/gen.28.30.svg)](https://github.com/Tectors/Archive/blob/master/tree/28.30.md)
 
@@ -14,7 +14,7 @@ It is automated using [Github Actions](https://docs.github.com/en/actions) and b
 <br> It uses a [python application file](https://github.com/Tectors/Archive/blob/main/.github/workflows/python-app.yml) that'll command the actions to run each specified amount of minutes.<br/>
 
 **Where is it getting it's information from?**:
-<br> [Fortnite-Central](https://t.co/cdzweItxer) <br>*API for Fortnite.*
+<br> [Fortnite-Central](https://t.co/cdzweItxer) *(API for Fortnite)*
 
 # Why should I use this?
 
