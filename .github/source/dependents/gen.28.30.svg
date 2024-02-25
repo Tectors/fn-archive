@@ -286,9 +286,9 @@
                         28.30
                         <!-- {ORG_REPLACEMENT_START} -->
 
-                        <div xmlns="http://www.w3.org/1999/xhtml" class="git_icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path fill-rule="evenodd" d="M6.69 2a1.75 1.75 0 00-1.75 1.756L5 21.253a.75.75 0 001.219.583L12 17.21l5.782 4.625A.75.75 0 0019 21.25V3.75A1.75 1.75 0 0017.25 2H6.69z"/>
+                        <div xmlns="http://www.w3.org/1999/xhtml" class="git_icon" style="height: 24px; top: -5px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                <path fill-rule="evenodd" d="M11.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122V6A2.5 2.5 0 0110 8.5H6a1 1 0 00-1 1v1.128a2.251 2.251 0 11-1.5 0V5.372a2.25 2.25 0 111.5 0v1.836A2.492 2.492 0 016 7h4a1 1 0 001-1v-.628A2.25 2.25 0 019.5 3.25zM4.25 12a.75.75 0 100 1.5.75.75 0 000-1.5zM3.5 3.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0z"/>
                             </svg>
                         </div>
                         <!-- Replacement (for branch icon ect..)
@@ -305,7 +305,7 @@
 
                     <div class="property">
                         <span>Release Date</span>
-                        <span>Feb 23rd, 2024</span>
+                        <span>Feb 25th, 2024</span>
                     </div>
                 </div>
                 

@@ -141,9 +141,9 @@ try:
 
     # If already exists, don't do anything
     # NOTE: this completely removes bloated commits
-    if not path.exists("./.github/source/dependents/gen." + parsed['version'] + ".svg"):
+    # if not path.exists("./.github/source/dependents/gen." + parsed['version'] + ".svg"):
         # Generate the scale-able file
-        scaleable_generator.generate(open('./.github/source/dependents/templates/source.svg', 'r').read(), parsed, splash, updated_at)
+    scaleable_generator.generate(open('./.github/source/dependents/templates/source.svg', 'r').read(), parsed, splash, updated_at)
 except:
     print('Failed to add splash')
 
