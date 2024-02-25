@@ -22,12 +22,12 @@ def parse_build_version(BuildVersion) -> str:
 def add_pak_content(pak):
     listing = []
 
-    full_template = open('./source/dependents/templates/definition.svg', 'r').read()
+    full_template = open('./.github/source/dependents/templates/definition.svg', 'r').read()
 
     try:
         for file in reversed(get('https://fortnite-api.com/v2/cosmetics/br/search/all?dynamicPakId={0}'.format(pak)).json()['data']):
             # If the svg already exists
-            if (os.path.exists('./source/dependents/referred/' + file['id'] + '.svg')):
+            if (os.path.exists('./.github/source/dependents/referred/' + file['id'] + '.svg')):
                 listing.append(file['id'])
                 continue
             
@@ -41,7 +41,7 @@ def add_pak_content(pak):
 
             content = content.replace('{0}', 'data:image/png;base64,' + base64.b64encode(response.content).decode('ascii'))
 
-            with open('./source/dependents/referred/' + file['id'] + '.svg', "w", encoding="utf-8") as f:
+            with open('./.github/source/dependents/referred/' + file['id'] + '.svg', "w", encoding="utf-8") as f:
                 f.write(content)
                 listing.append(file['id'])
     except Exception as e:
@@ -52,7 +52,7 @@ def add_pak_content(pak):
     return listing
 
 def save_image(content, name):
-    with open('./source/dependents/monthly-rotaton/' + name, "wb") as f:
+    with open('./.github/source/dependents/monthly-rotaton/' + name, "wb") as f:
         f.write(content)
     
     return name

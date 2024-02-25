@@ -31,12 +31,12 @@ jobs:
     - name: Install requirements
       run: |
         python3 -m pip install --upgrade pip setuptools wheel
-        python3 -m pip install -r source/python-application/requirements.txt
+        python3 -m pip install -r .github/source/python-application/requirements.txt
 
     - name: Make files
       run: |
         python3 --version
-        python3 source/python-application/generation.py
+        python3 .github/source/python-application/generation.py
 
     - name: Change old files to new
       run: |
