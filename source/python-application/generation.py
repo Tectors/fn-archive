@@ -178,7 +178,7 @@ manifest_readme_string = manifest_readme_string_start + manifest_readme_string
 versioning = parsed['type'] + "-" + parsed['version'] + "-CL-" + parsed['netcl'] + '-Windows'
 
 # This adds in the thumbnail (scale-able file) into the mark-down file
-markdown_content = f'<div style="pointer-events: none">\n  <img style="pointer-events: none" src="https://raw.githubusercontent.com/Tectors/Archive/master/source/dependents/gen.{parsed["version"]}.svg" width="360" height="155">\n<div>\n\n >  \n  \n  > {versioning}\n'
+markdown_content = f'<a href="#manifests">\n  <img style="pointer-events: none" src="https://raw.githubusercontent.com/Tectors/Archive/master/source/dependents/gen.{parsed["version"]}.svg" width="360" height="155"\\>\n</a>\n\n >  \n  \n  > {versioning}\n'
 markdown_content += '\n' + manifest_readme_string + '\n' + mappings_readme_string + '\n---\n\n' + markdown_keys
 
 # NOTE: }
