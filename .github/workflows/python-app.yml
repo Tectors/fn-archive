@@ -38,7 +38,7 @@ jobs:
         python3 --version
         python3 .github/source/python-application/manifest.py
 
-    - name: Change old files to new
+    - name: Push manifest
       run: |
         git config --global user.name "fortarchive[bot]"
         git config --global user.email "webfortcf@gmail.com"
@@ -52,7 +52,7 @@ jobs:
         python3 --version
         python3 .github/source/python-application/generation.py
 
-    - name: Change old files to new
+    - name: Push changes
       run: |
         git config --global user.name "fortarchive[bot]"
         git config --global user.email "webfortcf@gmail.com"

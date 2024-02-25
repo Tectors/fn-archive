@@ -85,7 +85,7 @@ update = path.exists("./.github/source/dependents/gen." + parsed['version'] + ".
 text = ""
 
 if update:
-    text = "Revise "
+    text = "Update "
 else:
     text = "Add "
 
