@@ -39,4 +39,4 @@ if not path.exists('./manifests/' + manifests[-1]['name']):
     manifest_module.commence_fest_import()
 
 with open(env_file, "a") as myfile:
-    myfile.write(f"version_build={text}{parsed['version'] + '-CL-' + parsed['netcl']} manifest")
+    myfile.write(f"version_build={text}{parsed['version'] + '-CL-' + parsed['netcl']} manifest\"")
