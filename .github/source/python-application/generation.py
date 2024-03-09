@@ -140,9 +140,9 @@ try:
     updated_at = '{dt:%B} {day}, {dt.year}'.format(dt = datetime.today(), day = ordinal(release_datetime.day)).replace('September', 'Sept').replace('October', 'Oct').replace('August', 'Aug').replace('January', 'Jan').replace('February', 'Feb').replace('December', 'Dec').replace('November', 'Nov')
     # If already exists, don't do anything
     # NOTE: this completely removes bloated commits
-    # if not path.exists("./.github/source/dependents/gen." + parsed['version'] + ".svg"):
+    if not path.exists("./.github/source/dependents/gen." + parsed['version'] + ".svg"):
         # Generate the scale-able file
-    scaleable_generator.generate(open('./.github/source/dependents/templates/source.svg', 'r').read(), parsed, splash, updated_at)
+        scaleable_generator.generate(open('./.github/source/dependents/templates/source.svg', 'r').read(), parsed, splash, updated_at)
 except:
     print('Failed to add splash')
 
