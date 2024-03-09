@@ -137,13 +137,12 @@ try:
     release_datetime = datetime.today()
 
     # The date that the update came out
-    updated_at = release_datetime.strftime("%B %d, %Y").replace(str(release_datetime.day) if not str(release_datetime.day).startswith('0') else str(release_datetime.day).replace('0', ''), ordinal(release_datetime.day), 1).replace('September', 'Sept').replace('October', 'Oct').replace('August', 'Aug').replace('January', 'Jan').replace('February', 'Feb').replace('December', 'Dec').replace('November', 'Nov')
-
+    updated_at = '{dt:%B} {day}, {dt.year}'.format(dt = datetime.today(), day = ordinal(release_datetime.day)).replace('September', 'Sept').replace('October', 'Oct').replace('August', 'Aug').replace('January', 'Jan').replace('February', 'Feb').replace('December', 'Dec').replace('November', 'Nov')
     # If already exists, don't do anything
     # NOTE: this completely removes bloated commits
-    if not path.exists("./.github/source/dependents/gen." + parsed['version'] + ".svg"):
+    # if not path.exists("./.github/source/dependents/gen." + parsed['version'] + ".svg"):
         # Generate the scale-able file
-        scaleable_generator.generate(open('./.github/source/dependents/templates/source.svg', 'r').read(), parsed, splash, updated_at)
+    scaleable_generator.generate(open('./.github/source/dependents/templates/source.svg', 'r').read(), parsed, splash, updated_at)
 except:
     print('Failed to add splash')
 

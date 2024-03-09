@@ -6,7 +6,7 @@ import base64
 # Gets the splash for the game
 def get_splash(version, type="mobileBgImg"):
     # NOTE: Expected to fail again in the future
-    endpoint = 'https://cdn2.unrealengine.com/keyart-overscan-nologo-2-2276x1280-aa06338f9aae.jpg'
+    endpoint = 'https://trackercdn.com/ghost/images/2024/3/81032_4270355-fortnitec5s2keyart_en.png'
     buffer = get(endpoint).content
     
     # Encode and return it

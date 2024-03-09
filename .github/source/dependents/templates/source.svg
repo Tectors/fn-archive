@@ -104,37 +104,14 @@
 
     @keyframes ImageV3 {
         0% {
-            position: absolute;
-            top: 0%;
-            bottom: 0;
-            left: -23.5%;
-            right: 0;
-            margin: auto;
-            width: 141%;
-            transform: scale(1);
-
+            transform: scale(2);
         }
         14% {
-            position: absolute;
-            top: 0%;
-            bottom: 0;
-            left: -23.5%;
-            right: 0;
-            margin: auto;
-            width: 141%;
-            transform: scale(1.5);
-
+            transform: scale(2);
         }
         50% {
         }
         to {
-            position: absolute;
-            top: 0%;
-            bottom: 0;
-            left: -23.5%;
-            right: 0;
-            margin: auto;
-            width: 141%;
         }
     }
 
@@ -222,13 +199,13 @@
 
     .image > img {
         position: absolute;
-        top: 0%;
-        bottom: 0;
-        left: -23.5%;
-        right: 0;
         margin: auto;
-        width: 141%;
+        width: 106%;
         animation: 2s 1 alternate ImageV3;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
     }
 
     .github-icon {
