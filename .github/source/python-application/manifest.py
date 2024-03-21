@@ -35,8 +35,9 @@ manifests = manifest_module.commence_fest()['response']
 
 if not path.exists('./manifests/' + manifests[-1]['name']):
     text = "Add "
+    print("hi")
 
-    manifest_module.commence_fest_import()
+manifest_module.commence_fest_import()
 
 with open(env_file, "a") as myfile:
     myfile.write(f"version_build={text}{parsed['version'] + '-CL-' + parsed['netcl']} manifest\"")
