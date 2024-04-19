@@ -1,6 +1,18 @@
 {
     "dynamicKeys": [
         {
+            "fileCount": 222,
+            "guid": "0855EE21AA3E58786648810E4DEA78E5",
+            "hasHighResTextures": true,
+            "key": "0xC03F32934BF6A4F3444D16BD84F8498C9B8CC475890C5E45B71A4FADDF6E6B88",
+            "keychain": "0855EE21AA3E58786648810E4DEA78E5:wD8yk0v2pPNETRa9hPhJjJuMxHWJDF5FtxpPrd9ua4g=",
+            "name": "pakchunk1000-WindowsClient.utoc",
+            "size": {
+                "formatted": "12.2 MB",
+                "raw": 12778685
+            }
+        },
+        {
             "fileCount": 31,
             "guid": "276D93712D1C6092C442D170B8956002",
             "hasHighResTextures": false,
@@ -171,16 +183,6 @@
     ],
     "mainKey": "0x3A90220142A8C64A3DC693423EEBF8E4B8D980354EDA4790F75296226DCD5FDE",
     "unloaded": [
-        {
-            "fileCount": 222,
-            "guid": "0855EE21AA3E58786648810E4DEA78E5",
-            "hasHighResTextures": true,
-            "name": "pakchunk1000-WindowsClient.utoc",
-            "size": {
-                "formatted": "12.2 MB",
-                "raw": 12778685
-            }
-        },
         {
             "fileCount": 21,
             "guid": "0AA41354BC261BF44EE59CBB903A1672",
