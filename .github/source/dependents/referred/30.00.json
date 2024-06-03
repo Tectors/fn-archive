@@ -20,8 +20,8 @@
             "keychain": "0A6F8755332638E42FC052470B3BD065:OGqX2AuHNDfNO1iagEg6fwOr3Ib0s8/5iOBLnDc0vSE=",
             "name": "pakchunk1001-WindowsClient.utoc",
             "size": {
-                "formatted": "16.2 MB",
-                "raw": 16980639
+                "formatted": "16.0 MB",
+                "raw": 16829087
             }
         },
         {
@@ -105,7 +105,7 @@
             "name": "pakchunk1008-WindowsClient.utoc",
             "size": {
                 "formatted": "10.8 MB",
-                "raw": 11367545
+                "raw": 11336825
             }
         },
         {
@@ -117,7 +117,7 @@
             "name": "pakchunk1009-WindowsClient.utoc",
             "size": {
                 "formatted": "23.7 MB",
-                "raw": 24889878
+                "raw": 24883734
             }
         },
         {
@@ -189,7 +189,7 @@
             "name": "pakchunk1015-WindowsClient.utoc",
             "size": {
                 "formatted": "32.2 MB",
-                "raw": 33797803
+                "raw": 33795755
             }
         },
         {
@@ -213,7 +213,7 @@
             "name": "pakchunk1017-WindowsClient.utoc",
             "size": {
                 "formatted": "19.5 MB",
-                "raw": 20493772
+                "raw": 20491724
             }
         },
         {
@@ -249,7 +249,7 @@
             "name": "pakchunk1020-WindowsClient.utoc",
             "size": {
                 "formatted": "29.7 MB",
-                "raw": 31143862
+                "raw": 31147958
             }
         },
         {
@@ -296,8 +296,8 @@
             "keychain": "D48BB37F98A9EDC6639CD34F0F277359:DuO9M4Czd0IIf2jSYsk9oooSGKNK/r4XX0fA9d6j8F8=",
             "name": "pakchunk1024-WindowsClient.utoc",
             "size": {
-                "formatted": "41.2 MB",
-                "raw": 43234008
+                "formatted": "39.8 MB",
+                "raw": 41716440
             }
         },
         {
