@@ -129,7 +129,7 @@
             "name": "pakchunk1017-WindowsClient.utoc",
             "size": {
                 "formatted": "9.1 MB",
-                "raw": 9546025
+                "raw": 9548073
             }
         },
         {
@@ -141,7 +141,7 @@
             "name": "pakchunk1018-WindowsClient.utoc",
             "size": {
                 "formatted": "14.2 MB",
-                "raw": 14926981
+                "raw": 14931077
             }
         },
         {
@@ -213,7 +213,7 @@
             "name": "pakchunk1024-WindowsClient.utoc",
             "size": {
                 "formatted": "20.3 MB",
-                "raw": 21328606
+                "raw": 21326558
             }
         },
         {
@@ -237,7 +237,7 @@
             "name": "pakchunk1026-WindowsClient.utoc",
             "size": {
                 "formatted": "14.1 MB",
-                "raw": 14774865
+                "raw": 14776913
             }
         },
         {
@@ -253,7 +253,7 @@
             }
         },
         {
-            "fileCount": 40,
+            "fileCount": 42,
             "guid": "A871664A8BB4DC1C1CCF27F042ACA0A2",
             "hasHighResTextures": false,
             "key": "0x92AA23A0C2659060D222818E5F832DCA28C0A27984491AEF875A5D098A5A776E",
@@ -261,7 +261,7 @@
             "name": "pakchunk1028-WindowsClient.utoc",
             "size": {
                 "formatted": "1.6 MB",
-                "raw": 1683159
+                "raw": 1714281
             }
         },
         {
@@ -285,7 +285,7 @@
             "name": "pakchunk1030-WindowsClient.utoc",
             "size": {
                 "formatted": "7.6 MB",
-                "raw": 8010767
+                "raw": 8008719
             }
         },
         {
@@ -345,7 +345,7 @@
             "name": "pakchunk1035-WindowsClient.utoc",
             "size": {
                 "formatted": "31.9 MB",
-                "raw": 33433749
+                "raw": 33435797
             }
         },
         {
@@ -405,7 +405,7 @@
             "name": "pakchunk1040-WindowsClient.utoc",
             "size": {
                 "formatted": "29.6 MB",
-                "raw": 31029610
+                "raw": 31031658
             }
         },
         {
@@ -516,7 +516,7 @@
             "name": "pakchunk1015-WindowsClient.utoc",
             "size": {
                 "formatted": "19.0 MB",
-                "raw": 19922147
+                "raw": 19918051
             }
         },
         {
