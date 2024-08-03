@@ -153,11 +153,11 @@
         animation-duration: 2s;
         width: 286px;
         overflow:hidden;
-left: 8px;top: 2px;color: #000000;border-radius: 6px;background: rgb(169 169 169 / 15%);font: 50px ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;padding: 15px;width: 286px;height: 35px;
+left: 8px;top: 2px;color: #ffffff;border-radius: 6px;background: rgb(169 169 169 / 15%);font: 50px ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;padding: 15px;width: 286px;height: 35px;
     }
 
     .git_icon &gt; svg {
-        fill: #000000;
+        fill: #ffffff;
         width: 0px;
         height: 24px;
         animation: example-svg;
