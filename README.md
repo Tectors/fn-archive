@@ -1,4 +1,4 @@
-# fn-archive
+# ![](/.github/source/readme-content/name.svg)
 
 Archive of [Fortnite](https://www.epicgames.com/fortnite/en-US/home) manifests, encryption keys, mappings and meta-data updated automatically using [Github Actions](https://docs.github.com/en/actions). Using nested mark-down files.
 
