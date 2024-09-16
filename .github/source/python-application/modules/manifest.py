@@ -12,6 +12,8 @@ from modules.token_gen import get_token
 
 # Get a new token
 authorization = get_token()
+if (authorization == False):
+    print("Failed to get token, client may of been disabled")
 
 # The endpoint that returns information about the manifest
 manifest_endpoint = "https://launcher-public-service-prod.ol.epicgames.com/launcher/api/public/assets/v2/platform/{0}/namespace/fn/catalogItem/4fe75bbc5a674f4f9b356b5c90567da5/app/Fortnite/label/Live"
@@ -21,6 +23,12 @@ andriod_endpoint = "https://launcher-public-service-prod-m.ol.epicgames.com/laun
 manifest_route = 'epicgames-download1.akamaized.net'
 
 def commence_fest():
+    if (authorization == False):
+        return {
+            "response": [],
+            "name": "Failed to retrieve token"
+        }
+    
     manifest_response = ((post(manifest_endpoint.format('Windows'), headers={ 'Authorization': authorization })).json())['elements'][0]
 
     def get_manifest(queries):
@@ -82,6 +90,12 @@ def commence_fest():
     }
 
 def commence_fest_import():
+    if (authorization == False):
+        return {
+            "response": [],
+            "name": "Failed to retrieve token"
+        }
+    
     manifest_response = ((post(manifest_endpoint.format('Windows'), headers={ 'Authorization': authorization })).json())['elements'][0]
 
     def get_manifest(queries):
