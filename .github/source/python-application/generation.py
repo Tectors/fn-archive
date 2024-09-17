@@ -152,6 +152,8 @@ except:
 # NOTE: {
 
 manifests = manifest_module.commence_fest()['response']
+manifest_module.commence_fest_import() # no idea why this wasn't here before
+
 added_manifests = []
 
 mappings_module.commence_mappings_fest()
