@@ -2,7 +2,7 @@
 
 Archive of [Fortnite](https://www.epicgames.com/fortnite/en-US/home) manifests, encryption keys, mappings and meta-data updated automatically using [Github Actions](https://docs.github.com/en/actions). Using nested mark-down files.
 
-[![31.20](https://github.com/Tectors/fn-archive/blob/master/.github/source/dependents/gen.31.20.svg)](https://github.com/Tectors/fn-archive/blob/master/tree/31.20.md)
+[![31.30](https://github.com/Tectors/fn-archive/blob/master/.github/source/dependents/gen.31.30.svg)](https://github.com/Tectors/fn-archive/blob/master/tree/31.30.md)
 
 # Features
 <img align="right" width="537.5" height="209" src="https://github.com/user-attachments/assets/fc782e4c-4ff8-498f-af34-fec5467d357e">
