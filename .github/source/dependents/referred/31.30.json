@@ -25,6 +25,18 @@
             }
         },
         {
+            "fileCount": 1160,
+            "guid": "1EC3010F39DA0C13B7232CB98575B7F9",
+            "hasHighResTextures": true,
+            "key": "0x2EA98711E84A4D323622C68AA8B1E9230339613CBAFEE025ADC7457C0F09BC5F",
+            "keychain": "1EC3010F39DA0C13B7232CB98575B7F9:LqmHEehKTTI2IsaKqLHpIwM5YTy6/uAlrcdFfA8JvF8=",
+            "name": "pakchunk1002-WindowsClient.utoc",
+            "size": {
+                "formatted": "18.8 MB",
+                "raw": 19694998
+            }
+        },
+        {
             "fileCount": 122,
             "guid": "2E8C63FEDFFE6B835126B6FF7CB47062",
             "hasHighResTextures": true,
@@ -109,6 +121,18 @@
             }
         },
         {
+            "fileCount": 161,
+            "guid": "C6870C1BBEDEBE42C5F6DAD9A0C7F02E",
+            "hasHighResTextures": false,
+            "key": "0x0366DCAE8523D92145CD476753944A422C1BC6BCE23A47515B7EAF101CB159BC",
+            "keychain": "C6870C1BBEDEBE42C5F6DAD9A0C7F02E:A2bcroUj2SFFzUdnU5RKQiwbxrziOkdRW36vEByxWbw=",
+            "name": "pakchunk1012-WindowsClient.utoc",
+            "size": {
+                "formatted": "14.6 MB",
+                "raw": 15334692
+            }
+        },
+        {
             "fileCount": 23,
             "guid": "C76B70EC836344CCFB8762C4747B4263",
             "hasHighResTextures": false,
@@ -184,16 +208,6 @@
     "mainKey": "0x5EDDC5B6C0EFC4C7838F7DA7CBED241DF13D1B8B12F8074290B1BCDBACB64455",
     "unloaded": [
         {
-            "fileCount": 1160,
-            "guid": "1EC3010F39DA0C13B7232CB98575B7F9",
-            "hasHighResTextures": true,
-            "name": "pakchunk1002-WindowsClient.utoc",
-            "size": {
-                "formatted": "18.8 MB",
-                "raw": 19694998
-            }
-        },
-        {
             "fileCount": 3301,
             "guid": "73424C54CA2C14ED412BBB7BFD7A8E6C",
             "hasHighResTextures": true,
@@ -211,16 +225,6 @@
             "size": {
                 "formatted": "22.0 KB",
                 "raw": 22518
-            }
-        },
-        {
-            "fileCount": 161,
-            "guid": "C6870C1BBEDEBE42C5F6DAD9A0C7F02E",
-            "hasHighResTextures": false,
-            "name": "pakchunk1012-WindowsClient.utoc",
-            "size": {
-                "formatted": "14.6 MB",
-                "raw": 15334692
             }
         },
         {
