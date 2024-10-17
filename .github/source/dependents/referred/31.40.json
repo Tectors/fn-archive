@@ -119,6 +119,18 @@
                 "formatted": "4.2 MB",
                 "raw": 4412918
             }
+        },
+        {
+            "fileCount": 23,
+            "guid": "FC29F85DE0913DA71729BF081D5BC360",
+            "hasHighResTextures": false,
+            "key": "0x751854ACBDF400D7A47E33184B70437EEC54CBE8E890F1B263542DECE61FA2A0",
+            "keychain": "FC29F85DE0913DA71729BF081D5BC360:dRhUrL30ANekfjMYS3BDfuxUy+jokPGyY1Qt7OYfoqA=",
+            "name": "pakchunk1019-WindowsClient.utoc",
+            "size": {
+                "formatted": "1.4 MB",
+                "raw": 1510880
+            }
         }
     ],
     "mainKey": "0x6B80868E9345C839D8B10CE00179763E15E5FDA976E499D6CFBEDB41AC0FAD36",
@@ -211,16 +223,6 @@
             "size": {
                 "formatted": "415.3 KB",
                 "raw": 425260
-            }
-        },
-        {
-            "fileCount": 23,
-            "guid": "FC29F85DE0913DA71729BF081D5BC360",
-            "hasHighResTextures": false,
-            "name": "pakchunk1019-WindowsClient.utoc",
-            "size": {
-                "formatted": "1.4 MB",
-                "raw": 1510880
             }
         }
     ],
