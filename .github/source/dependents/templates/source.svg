@@ -1,218 +1,157 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="360" height="160"><link xmlns="" type="text/css" rel="stylesheet" id="dark-mode-custom-link"/><link xmlns="" type="text/css" rel="stylesheet" id="dark-mode-general-link"/><style xmlns="" lang="en" type="text/css" id="dark-mode-custom-style"/><style xmlns="" lang="en" type="text/css" id="dark-mode-native-style"/><link xmlns="" type="text/css" rel="stylesheet" id="dark-mode-custom-link"/><link xmlns="" type="text/css" rel="stylesheet" id="dark-mode-general-link"/><style xmlns="" lang="en" type="text/css" id="dark-mode-custom-style"/><style xmlns="" lang="en" type="text/css" id="dark-mode-native-style"/>
-    <!-- Github styles -->
-    <link xmlns="" type="text/css" rel="stylesheet" id="dark-mode-custom-link"/>
-    <link xmlns="" type="text/css" rel="stylesheet" id="dark-mode-general-link"/>
-    <style xmlns="" lang="en" type="text/css" id="dark-mode-custom-style"/>
-    <style xmlns="" lang="en" type="text/css" id="dark-mode-native-style"/>
+<!-- A visual representation of an archived build, see: https://github.com/Tectors/fn-archive -->
+<!-- Version: {0} -->
+<!-- Last Updated: {2} -->
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="160">
+  <!-- Github styles -->
+  <link xmlns="" type="text/css" rel="stylesheet" id="dark-mode-custom-link"/>
+  <link xmlns="" type="text/css" rel="stylesheet" id="dark-mode-general-link"/>
+  <style xmlns="" lang="en" type="text/css" id="dark-mode-custom-style"/>
+  <style xmlns="" lang="en" type="text/css" id="dark-mode-native-style"/>
 
-    <!-- Custom style -->
-<style>
-    svg {
-        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
-        font-size: 14px;
-        line-height: 1.5;
-    }
-
-    .outliner {
-        fill: none;
-        stroke: rgb(88 166 255);
-        padding: 16px !important;
-        width: calc(100% - 230px);
-        height: calc(100% - 45px);
-        rx: 6;
-        ry: 6;
-        x: 5;
-        y: 5;
-        x: 23;
-        y: 26.5;
-    }
-
-    @keyframes example {
-        from {
-            left: 250px;
-        }
-        to {
-            left: 0;
-        }
-    }
-
-    @keyframes scaleUp {
-        from {
-            transform: scale(0);
-        }
-        to {
-            transform: scale(1);
-        }
-    }
-
-    @keyframes ImageV2 {
-        0% {
-            position: absolute;
-            width: 0px;
-            height: 0px;
-            border: 1px solid rgb(88 166 255);
-            border-radius: 6px;
-            right: 0;
-            overflow: hidden;
-            transform: rotate(-50deg);
-            left: 154px;
-            top: 10px;
-
-        }
-        14% {
-            position: absolute;
-            width: 0px;
-            height: 0px;
-            border: 1px solid rgb(88 166 255);
-            border-radius: 0px;
-            right: 0;
-            overflow: hidden;
-            transform: rotate(-30deg);
-            left: 154px;
-            top: 10px;
-        }
-        50% {
-            top: 31px;
-            border-radius: 1px;
-            transform: rotate(0deg);
-        }
-        to {
-            position: absolute;
-            width: 172px;
-            height: 100px;
-            border: 1px solid rgb(88 166 255);
-            border-radius: 6px;
-            right: 0;
-            overflow: hidden;
-            transform: scale(1);
-            left: 144px;
-            top: 31px;
-
-        }
-    }
-
-    @keyframes TitleAnimation {
-        0% {
-            left: 30px;
-            opacity: 0;
-        }
-        50% {
-            right: 0px;
-            opacity: 1;
-        }
-    }
-
-    @keyframes ImageV3 {
-        0% {
-            transform: scale(2);
-        }
-        14% {
-            transform: scale(2);
-        }
-        50% {
-        }
-        to {
-        }
-    }
-
-    .title-parent {
-        top: 17px;
-        position: relative;
-        left: 15px;
-    }
-
-    .title {
-        margin-top: 0;
-        margin-bottom: 0.05em;
-        line-height: 24px;
-        font-size: 20px;
-        font-weight: 600;
-        color: #c9d1d9;
-        fill: rgb(36, 41, 46);
-        position: inherit;
-    }
-
-    .clickable {
-        position: relative;
-        background: rgb(88 166 255 / 12%);
-        color: #58a6ff;
-        border-radius: 8px;
-        padding: 6px;
-        font: 12px ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
-        margin: 5px;
-    }
-
-    .list {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        bottom: 48px;
-        left: 0;
-        color: #58a6ff;
-        border-top: 1px solid #30363D;
-    }
-
-    .property {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .property > span {
-        top: 15px;
-        position: relative;
-        left: 220px;
-    }
-
-    .property > span:nth-child(1) {
-        color: #8b949e;
-        x: 28px;
-        y: 10px;
-        position: relative;
-        left: 0;
-    }
-
-    .property > span:nth-child(2) {
-        font-size: 14px;
-        color: #c9d1d9;
-        left: 0;
-    }
-
+  <!-- SVG Style -->
+  <style>
+    <!-- Global -->
     a {
-        color: initial;
-        outline: none;
-        text-decoration: none;
+      color: initial;
+      outline: none;
+      text-decoration: none;
+    }
+    
+    svg {
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+      font-size: 14px;
+      line-height: 1.5;
     }
 
-    .image {
-        position: absolute;
+    <!-- Animations -->
+    @keyframes ThumbnailAnimation {
+      0% {
+        width: 0px;
+        height: 0px;
+        border-radius: 6px;
+        overflow: hidden;
+        transform: rotate(-50deg);
+        left: 154px;
+        top: 10px;
+      }
+
+      14% {
+        width: 0px;
+        height: 0px;
+        border-radius: 0px;
+        overflow: hidden;
+        transform: rotate(-30deg);
+        left: 154px;
+        top: 10px;
+      }
+
+      50% {
+        top: 31px;
+        border-radius: 1px;
+        transform: rotate(0deg);
+      }
+
+      to {
         width: 172px;
         height: 100px;
-        border: 1px solid rgb(88 166 255);
         border-radius: 6px;
-        right: 0;
         overflow: hidden;
         transform: scale(1);
         left: 144px;
         top: 31px;
-        animation: 2s 1 alternate ImageV2;
+      }
+    }
+
+    @keyframes ThumbnailImageAnimation {
+      0%, 14% {
+        transform: scale(2);
+      }
+
+      50% {}
+      to {}
+    }
+
+    <!-- Border 1 -->
+    .outliner {
+      fill: none;
+      stroke: rgb(88 166 255);
+      padding: 16px !important;
+      width: calc(100% - 230px);
+      height: calc(100% - 45px);
+      rx: 6;
+      ry: 6;
+      x: 5;
+      y: 5;
+      x: 23;
+      y: 26.5;
+    }
+
+    <!-- Title -->
+    .title-container {
+      top: 17px;
+      position: relative;
+      left: 15px;
+    }
+
+    .title {
+      margin-top: 0;
+      margin-bottom: 0.05em;
+      line-height: 24px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #c9d1d9;
+      fill: rgb(36, 41, 46);
+      position: inherit;
+    }
+
+    .property {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .property > span {
+      top: 15px;
+      position: relative;
+      left: 220px;
+    }
+
+    .property > span:nth-child(1) {
+      color: #8b949e;
+      x: 28px;
+      y: 10px;
+      position: relative;
+      left: 0;
+    }
+
+    .property > span:nth-child(2) {
+      font-size: 14px;
+      color: #c9d1d9;
+      left: 0;
+    }
+
+    .image {
+      position: absolute;
+      width: 172px;
+      height: 100px;
+      border: 1px solid rgb(88 166 255);
+      border-radius: 6px;
+      right: 0;
+      overflow: hidden;
+      transform: scale(1);
+      left: 144px;
+      top: 31px;
+      animation: 2s 1 alternate ThumbnailAnimation;
     }
 
     .image > img {
-        position: absolute;
-        margin: auto;
-        width: 106%;
-        animation: 2s 1 alternate ImageV3;
-        top: 50%;
-        left: 50%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-    }
-
-    .github-icon {
-        fill: #58a6ff;
-        position: relative;
-        left: 2px;
-        top: -2px;
+      position: absolute;
+      margin: auto;
+      width: 106%;
+      animation: 2s 1 alternate ThumbnailImageAnimation;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
     }
 
     .git_icon {
@@ -237,42 +176,37 @@
         width: 24px;
         height: 24px;
     }
+  </style>
 
-    .side-bar {
-        fill: rgb(88 166 255);
-        stroke: rgb(88 166 255);
-        padding: 16px !important;
-        width: calc(100% - 353px);
-        height: calc(100% - 45px);
-        rx: 0;
-        ry: 6;
-        x: 5;
-        y: 5;
-        x: 0;
-        y: 35;
-    }
-    </style>
+  <g xmlns="http://www.w3.org/2000/svg">
+    <rect class="outliner"/>
 
     <g xmlns="http://www.w3.org/2000/svg">
-        <rect class="outliner"/>
+      <foreignObject xmlns="http://www.w3.org/2000/svg" x="23" y="26.5" width="318" height="176">
 
-        <g xmlns="http://www.w3.org/2000/svg">
-            <foreignObject xmlns="http://www.w3.org/2000/svg" x="23" y="26.5" width="318" height="176">
-                <div xmlns="http://www.w3.org/1999/xhtml" class="title-parent">
-                    <h2 class="title">
-                        {0}
-                    </h2>
+        <div xmlns="http://www.w3.org/1999/xhtml" class="title-container">
+          <!-- {0} = Version (31.40) -->
+          <!-- {1} = Header Text -->
+          <!-- {2} = Recent Update Date -->
+          <h2 class="title">{0}</h2>
+          <div xmlns="http://www.w3.org/1999/xhtml" class="git_icon" style="height: 24px; top: -5px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path d="M3 2.75A2.75 2.75 0 0 1 5.75 0h14.5a.75.75 0 0 1 .75.75v20.5a.75.75 0 0 1-.75.75h-6a.75.75 0 0 1 0-1.5h5.25v-4H6A1.5 1.5 0 0 0 4.5 18v.75c0 .716.43 1.334 1.05 1.605a.75.75 0 0 1-.6 1.374A3.251 3.251 0 0 1 3 18.75ZM19.5 1.5H5.75c-.69 0-1.25.56-1.25 1.25v12.651A2.989 2.989 0 0 1 6 15h13.5Z"></path><path d="M7 18.25a.25.25 0 0 1 .25-.25h5a.25.25 0 0 1 .25.25v5.01a.25.25 0 0 1-.397.201l-2.206-1.604a.25.25 0 0 0-.294 0L7.397 23.46a.25.25 0 0 1-.397-.2v-5.01Z">
+                </path>
+            </svg>
+          </div>
+          <div class="property">
+            <span>{1}</span>
+            <span>{2}</span>
+          </div>
+        </div>
 
-                    <div class="property">
-                        <span>{1}</span>
-                        <span>{2}</span>
-                    </div>
-                </div>
-                
-                <div xmlns="http://www.w3.org/1999/xhtml" class="image">
-                    <img src="{4}"></img>
-                </div>
-            </foreignObject>
-        </g>
+        <!-- {4} = Image -->
+        <div xmlns="http://www.w3.org/1999/xhtml" class="image">
+          <img src="{4}"></img>
+        </div>
+
+      </foreignObject>
     </g>
+  </g>
 </svg>

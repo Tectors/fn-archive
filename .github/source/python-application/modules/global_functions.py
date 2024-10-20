@@ -22,37 +22,53 @@ def parse_build_version(BuildVersion) -> str:
 def add_pak_content(pak):
     listing = []
 
-    full_template = open('./.github/source/dependents/templates/definition.svg', 'r').read()
+    # Read the full SVG template
+    with open('./.github/source/dependents/templates/definition.svg', 'r') as template_file:
+        full_template = template_file.read()
 
     try:
-        for file in reversed(get('https://fortnite-api.com/v2/cosmetics/br/search/all?dynamicPakId={0}'.format(pak)).json()['data']):
-            # If the svg already exists
-            if (os.path.exists('./.github/source/dependents/referred/' + file['id'] + '.svg')):
+        # Fetch cosmetics data from the API
+        url = f'https://fortnite-api.com/v2/cosmetics/br/search/all?dynamicPakId={pak}'
+        cosmetics_data = get(url).json().get('data', [])
+
+        for file in reversed(cosmetics_data):
+            svg_path = f'./.github/source/dependents/referred/{file["id"]}.svg'
+
+            # Skip if the SVG already exists
+            if os.path.exists(svg_path):
                 listing.append(file['id'])
                 continue
             
-            print('Added new SVG with the id: {0}'.format(file['id']))
-            time.sleep(2)
+            print(f'Added new SVG with the id: {file["id"]}')
+            time.sleep(2) # Rate limiting
 
+            # Fetch the icon image
             response = get(file['images']['icon'])
 
-            content = full_template
-            print('Response on #{0} pak (#{1})'.format(pak, file['id']))
+            if response.status_code != 200:
+                print(f"Failed to download image for ID {file['id']}: {response.status_code}")
+                continue
 
-            content = content.replace('{0}', 'data:image/png;base64,' + base64.b64encode(response.content).decode('ascii'))
+            print(f'Response on #{pak} pak (#{file["id"]})')
 
-            with open('./.github/source/dependents/referred/' + file['id'] + '.svg', "w", encoding="utf-8") as f:
+            # Encode the image in base64
+            encoded_image = base64.b64encode(response.content).decode('ascii')
+            content = full_template.replace('{0}', f'data:image/png;base64,{encoded_image}')
+
+            # Write the SVG file
+            with open(svg_path, "w", encoding="utf-8") as f:
                 f.write(content)
                 listing.append(file['id'])
-    except Exception as e:
-        print('Error on {0}: {1}'.format(pak, e.__str__()))
 
+    except Exception as e:
+        print(f'Error on {pak}: {e}')
         return listing
 
     return listing
 
 def save_image(content, name):
-    with open('./.github/source/dependents/monthly-rotaton/' + name, "wb") as f:
+    image_path = f'./.github/source/dependents/monthly-rotaton/{name}'
+    with open(image_path, "wb") as f:
         f.write(content)
     
     return name

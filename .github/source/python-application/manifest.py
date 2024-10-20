@@ -1,43 +1,37 @@
 #!/usr/bin/python3
 
-# NOTE: This is the imports for the file,
-# NOTE: there is a bunch of modules being imported,
-# NOTE: that are made for this file.
+# NOTE: This script imports necessary modules and processes Fortnite mappings.
 
-# NOTE: The manifest module is used to make make the manifests
+# Import the manifest module
 import modules.manifest as manifest_module
-
 from requests import get
-from os import path
+from os import path, getenv
 
 # Global functions used
 from modules.global_functions import parse_build_version
 
-# NOTE: 1. Commences the manifest module
-
+# Fetch mappings from the API
 mappings = get('https://fortnitecentral.genxgames.gg/api/v1/mappings').json()
 
-# Parsing the build version will give us more information about the update
+# Parse the build version to extract more information about the update
 parsed = parse_build_version(mappings[0]["fileName"])
 
-update = path.exists("./.github/source/dependents/gen." + parsed['version'] + ".svg")
-text = ""
+# Check if the generated SVG file already exists
+update = path.exists(f"./.github/source/dependents/gen.{parsed['version']}.svg")
+text = ("Revise" if update else "Add") + " "
 
-if update:
-    text = "Revise "
-else:
-    text = "Add "
+# Get the environment file for GitHub actions
+env_file = getenv('GITHUB_ENV')
 
-import os
-env_file = os.getenv('GITHUB_ENV')
-
+# Fetch manifests and check if the latest manifest file exists
 manifests = manifest_module.commence_fest()['response']
 
-if not path.exists('./manifests/' + manifests[-1]['name']):
+if not path.exists(f'./manifests/{manifests[-1]["name"]}'):
     text = "Add "
-    print("hi")
 
+# Import the manifest
 manifest_module.commence_fest_import()
 
+# Write the version build information to the environment file
 with open(env_file, "a") as myfile:
-    myfile.write(f"version_build={text}{parsed['version'] + '-CL-' + parsed['netcl']} manifest\"")
+    myfile.write(f"version_build={text}{parsed['version']}-CL-{parsed['netcl']} manifest\"\n")

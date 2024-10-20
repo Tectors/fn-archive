@@ -59,35 +59,27 @@ chain = get('https://fortnitecentral.genxgames.gg/api/v1/aes').json()
 # Parsing the build version will give us more information about the update
 parsed = parse_build_version(mappings[0]["fileName"])
 
-if not path.exists("./.github/source/dependents/referred/" + parsed['version'] + ".json"):
-    with open("./.github/source/dependents/referred/" + parsed['version'] + ".json", "w", encoding="utf-8") as f:
+file_path = f"./.github/source/dependents/referred/{parsed['version']}.json"
+
+if not path.exists(file_path):
+    with open(file_path, "w", encoding="utf-8") as f:
         f.write(json.dumps(chain, indent=4, sort_keys=True))
 else:
-    previous_model = json.load(open("./.github/source/dependents/referred/" + parsed['version'] + ".json", 'r'))
+    with open(file_path, 'r', encoding="utf-8") as f:
+        previous_model = json.load(f)
+
     prev_dynamicKeys = previous_model['dynamicKeys']
     dynamicKeys = chain['dynamicKeys']
 
-    temp = []
-    for element in dynamicKeys:
-        if element not in prev_dynamicKeys:
-            temp.append(element)
-    
-    for element in temp:
-        name = element['name']
-        _text += f'+ {name.split(".")[0]} ({element["size"]["formatted"]}) '
+    new_elements = [element for element in dynamicKeys if element not in prev_dynamicKeys]
+    _text = ' '.join(f'+ {element["name"].split(".")[0]} ({element["size"]["formatted"]})' for element in new_elements)
 
-    _text = _text.rsplit(' ', 1)[0]
-
-    with open("./.github/source/dependents/referred/" + parsed['version'] + ".json", "w", encoding="utf-8") as f:
+    # Write the updated chain to the JSON file
+    with open(file_path, "w", encoding="utf-8") as f:
         f.write(json.dumps(chain, indent=4, sort_keys=True))
 
-update = path.exists("./.github/source/dependents/gen." + parsed['version'] + ".svg")
-text = ""
-
-if update:
-    text = "Update "
-else:
-    text = "Add "
+update = path.exists(f"./.github/source/dependents/gen.{parsed['version']}.svg")
+text = ("Update" if update else "Add") + " "
 
 import os
 env_file = os.getenv('GITHUB_ENV')
@@ -99,14 +91,13 @@ dynamicKeys = []
 markdown_keys += f'> *{chain["mainKey"]}*\n\n'
 dynamicKeys.append(chain["mainKey"])
 
-# (Value="0xBF5B024ABB2023441B359FB8BF99659705B59FB33D75A817E06B3163BFE847FE",Guid="0D8B24BCF7F9C0293FFE1264A5D05613")
-editor_pref = '('
+editor_preferences = '('
 
 for package in chain['dynamicKeys']:
     key = package['key']
 
-    __text = f"(Value=\"{key}\",Guid=\"{package['guid']}\")"
-    editor_pref += __text + ','
+    # Add aes key
+    editor_preferences += f"(Value=\"{key}\",Guid=\"{package['guid']}\"),"
 
     dynamicKeys.append(key)
 
@@ -123,7 +114,7 @@ for package in chain['dynamicKeys']:
 
     markdown_keys += drop_down.format(package['name'], f' > \n    {key}\n    KEYCHAIN: {package["keychain"]}\n\n{markdown_content}')
 
-manifest_readme_string_start += f"<details>\n  <summary>Editor Preferences</summary>\n\n > \n    {editor_pref.rsplit(',', 1)[0] + ')'}\n</details>\n\n"
+manifest_readme_string_start += f"<details>\n  <summary>Editor Preferences</summary>\n\n > \n    {editor_preferences.rsplit(',', 1)[0] + ')'}\n</details>\n\n"
 
 # | Variables defined: dynamicKeys, parsed, chain
 # NOTE: }
@@ -138,9 +129,10 @@ try:
 
     # The date that the update came out
     updated_at = '{dt:%B} {day}, {dt.year}'.format(dt = datetime.today(), day = ordinal(release_datetime.day)).replace('September', 'Sept').replace('October', 'Oct').replace('August', 'Aug').replace('January', 'Jan').replace('February', 'Feb').replace('December', 'Dec').replace('November', 'Nov')
+    
     # If already exists, don't do anything
     # NOTE: this completely removes bloated commits
-    if not path.exists("./.github/source/dependents/gen." + parsed['version'] + ".svg"):
+    if not path.exists(f"./.github/source/dependents/gen.{parsed['version']}.svg"):
         # Generate the scale-able file
         scaleable_generator.generate(open('./.github/source/dependents/templates/source.svg', 'r').read(), parsed, splash, updated_at)
 except:
@@ -152,10 +144,9 @@ except:
 # NOTE: {
 
 manifests = manifest_module.commence_fest()['response']
-manifest_module.commence_fest_import() # no idea why this wasn't here before
+manifest_module.commence_fest_import()
 
 added_manifests = []
-
 mappings_module.commence_mappings_fest()
 
 for manifest in manifests:
@@ -176,7 +167,7 @@ manifest_readme_string = manifest_readme_string_start + manifest_readme_string
 # NOTE: Putting a part the real README
 # NOTE: {
 
-versioning = parsed['type'] + "-" + parsed['version'] + "-CL-" + parsed['netcl'] + '-Windows'
+versioning = f"{parsed['type']}-{parsed['version']}-CL-{parsed['netcl']}-Windows"
 
 # This adds in the thumbnail (scale-able file) into the mark-down file
 markdown_content = f'<a href="#manifests">\n  <img style="pointer-events: none" src="https://raw.githubusercontent.com/Tectors/fn-archive/master/.github/source/dependents/gen.{parsed["version"]}.svg" width="360" height="155"\\>\n</a>\n\n >  \n  \n  > {versioning}\n'
@@ -196,35 +187,7 @@ with open('README.md', "w", encoding="utf-8") as f:
     f.write(open('./.github/source/dependents/templates/reference.md', 'r').read().replace('{PARSED_VERSION}', parsed['version']))
 
 # NOTE: }
-# NOTE: This is getting the last file edited with the
-# NOTE: extension (.svg) and with the starting point. (gen.)
-# NOTE: And then it checks if it is not the same one as the current version
-
-related_entries = [entry for entry in glob.glob(r'.\storage\gen.*.svg') if not entry.endswith(f'{parsed["version"]}.svg')]
-possibly_latest_entry = related_entries[-1] if related_entries.__len__() > 0 else None
-
-if possibly_latest_entry:
-    content = open(possibly_latest_entry, 'r').read()
-
-    # NOTE: If it is a valid generated file
-    # NOTE: and if it hasn't been replaced the Badge already.
-    if content.startswith('<svg ') and "{REPLACEMENT_START}" in content:
-        # Scalable Vector original badge
-        original = content.split('{REPLACEMENT_START}')[1].split('{REPLACEMENT_STOP}')[0].rsplit("\n", 1)[0]
-        # Current Scalable Vector badge
-        alpha = content.split('{ORG_REPLACEMENT_START} -->')[1].split('<!--')[0].rsplit("\n", 1)[0]
-
-        content = content.replace(alpha, original)
-
-        # Replace scalable data
-        content = content.replace(
-            '<!-- Replacement (for branch icon ect..)' + 
-            content.split('<!-- Replacement (for branch icon ect..)')[1].split('-->')[0] + '-->', '').replace(
-        '</div>\n                        \n                    </h2>',
-        '</div>\n                    </h2>').replace('<!-- {ORG_REPLACEMENT_START} -->\n', '<!-- Completed badge replacement -->').replace('//', '/')
-
-        with open(possibly_latest_entry, 'w') as entry:
-            entry.write(content)
+# badge_gen_usage was here <-------
 
 with open(env_file, "a") as myfile:
-    myfile.write(f"version_build={text}{parsed['version'] + '-CL-' + parsed['netcl']}\"" + f" -m \"{_text}\"")
+    myfile.write(f"version_build={text}{parsed['version']}-CL-{parsed['netcl']}\" -m \"{_text}\"")

@@ -155,8 +155,6 @@ def commence_fest_import():
             'hash': manifest_response['hash'],
         })
 
-        print(name)
-
         if((".\\manifests\\" + name) not in glob.glob(r'.\manifests\*.manifest')):
             if not path.exists(directory + name):
                 content = get(route, timeout=1)
