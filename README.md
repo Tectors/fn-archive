@@ -1,23 +1,24 @@
-# ![](/.github/source/readme-content/name.svg)
+![](/.github/source/readme-content/name.svg)
 
-Archive of [Fortnite](https://www.epicgames.com/fortnite/en-US/home) manifests, encryption keys, mappings and meta-data updated automatically using [Github Actions](https://docs.github.com/en/actions). Using nested mark-down files.
+## Archive of [Fortnite](https://www.epicgames.com/fortnite/en-US/home)'s versions
 
-[![31.40](https://github.com/Tectors/fn-archive/blob/master/.github/source/dependents/gen.31.40.svg)](https://github.com/Tectors/fn-archive/blob/master/tree/31.40.md)
+Welcome to **fn-archive** that holds archives of **Fortnite** manifests, encryption keys, mappings, and metadata! This repository is automatically updated using [GitHub Actions](https://docs.github.com/en/actions) and utilizes nested Markdown files for organization.
 
-# Features
-<img align="right" width="537.5" height="209" src="https://github.com/user-attachments/assets/fc782e4c-4ff8-498f-af34-fec5467d357e">
+## All ran automatically, and maintained. 🔧
 
-###  **Aes Keys for JsonAsAsset**
-Copy keys to [JsonAsAsset](https://github.com/GMatrixGames/JsonAsAsset) by simply going to the markdown file and copying the editor peferences and pasting them into the AES Keys property in your settings
+<img align="right" width="430" height="189" src="https://github.com/Tectors/fn-archive/blob/master/.github/source/dependents/gen.31.40.svg">
 
-###  **Manifests**
-Access the **manifests** of a version by clicking on the link of the manifests
+### 📜 Manifests
+Access the **manifests** for a specific version by clicking on the manifest folder [here](https://github.com/Tectors/fn-archive/tree/master/manifests).
 
-###  **USMAP**
-The mappings for each version get updated with the rest of the version, so when the mappings are made, you can simply get them here for a version
+### Mapping Files (FModel, CUE4Parse)
+The mappings for each version are updated alongside the rest of the version. You can easily access them here for any specific version.
 
-###  **Keychain and AES 66/64 Key**
-You can access the **keychain** and the 66 character aes key for each pak file
+### 🔑 Keychain and AES Key
+You can find the **keychain** and AES key for each pak file directly in this repository.
 
-###  **Update Time**
-The update time of this is based on the resources it uses, you can access the source code and see the resources [here](https://github.com/Tectors/fn-archive/tree/master/.github/source/python-application).
+### ⏰ Update Time
+The update frequency is based on the resources used. You can view the source code and see the resources [here](https://github.com/Tectors/fn-archive/tree/master/.github/source/python-application).
+
+#### !MagmaReef!
+> If you are apart of Epic, and have an issue with this repo, contact me and I'll take it down.
