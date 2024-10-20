@@ -153,7 +153,7 @@
         animation-duration: 2s;
         width: 286px;
         overflow:hidden;
-left: 8px;top: 2px;color: #ffffff;border-radius: 6px;background: rgb(169 169 169 / 15%);font: 50px ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;padding: 15px;width: 286px;height: 35px;
+left: 8px;top: 2px;color: #58a6ff;border-radius: 6px;background: rgba(56, 139, 253, 0.15);font: 50px ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;padding: 15px;width: 286px;height: 35px;
     }
 
     .git_icon &gt; svg {
@@ -197,9 +197,6 @@ left: 8px;top: 2px;color: #ffffff;border-radius: 6px;background: rgb(169 169 169
         <g xmlns="http://www.w3.org/2000/svg">
             <foreignObject xmlns="http://www.w3.org/2000/svg" width="340px" height="82px" style="x: 4;y: 6;width: 410px;height: 241%;">
                 <div xmlns="http://www.w3.org/1999/xhtml" class="git_icon">
-                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                            <path fill-rule="evenodd" d="M4 7a1 1 0 100-2 1 1 0 000 2zm4.75-1.5a.75.75 0 000 1.5h11.5a.75.75 0 000-1.5H8.75zm0 6a.75.75 0 000 1.5h11.5a.75.75 0 000-1.5H8.75zm0 6a.75.75 0 000 1.5h11.5a.75.75 0 000-1.5H8.75zM5 12a1 1 0 11-2 0 1 1 0 012 0zm-1 7a1 1 0 100-2 1 1 0 000 2z"/>
-                        </svg>
                         <div>fn-archive</div>
                 </div>  
             </foreignObject>            
