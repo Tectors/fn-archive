@@ -6,7 +6,9 @@ Welcome to **fn-archive** that holds archives of **Fortnite** manifests, encrypt
 
 ## All ran automatically, and maintained. 🔧
 
-<img align="right" width="430" height="189" src="https://github.com/Tectors/fn-archive/blob/master/.github/source/dependents/gen.31.40.svg">
+<a href="https://github.com/Tectors/fn-archive/blob/master/tree/31.40.md">
+  <img align="right" width="430" height="189" src="https://github.com/Tectors/fn-archive/blob/master/.github/source/dependents/gen.31.40.svg">
+</a>
 
 ### 📜 Manifests
 Access the **manifests** for a specific version by clicking on the manifest folder [here](https://github.com/Tectors/fn-archive/tree/master/manifests).
