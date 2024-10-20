@@ -20,5 +20,4 @@ You can find the **keychain** and AES key for each pak file directly in this rep
 ### ⏰ Update Time
 The update frequency is based on the resources used. You can view the source code and see the resources [here](https://github.com/Tectors/fn-archive/tree/master/.github/source/python-application).
 
-#### !MagmaReef!
 > If you are apart of Epic, and have an issue with this repo, contact me and I'll take it down.
