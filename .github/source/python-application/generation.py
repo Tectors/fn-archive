@@ -177,7 +177,7 @@ markdown_content += '\n' + manifest_readme_string + '\n' + mappings_readme_strin
 # NOTE: Writing the file and we will be complete
 # NOTE: {
 
-with open('./tree/' + parsed['version'] + '.md', "w", encoding="utf-8") as f:
+with open('./builds/' + parsed['version'] + '.md', "w", encoding="utf-8") as f:
     # Write it
     print(f'- Wrote mark-down file ({parsed["version"]})')
     f.write(markdown_content)
