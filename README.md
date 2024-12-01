@@ -10,8 +10,8 @@ Welcome to **fn-archive** that holds archives of **Fortnite** manifests, encrypt
 
 ## All ran automatically, and maintained. 🔧
 
-<a href="https://github.com/Tectors/fn-archive/blob/master/builds/32.11.md">
-  <img align="right" width="430" height="189" src="https://github.com/Tectors/fn-archive/blob/master/.github/source/dependents/gen.32.11.svg">
+<a href="https://github.com/Tectors/fn-archive/blob/master/builds/33.00.md">
+  <img align="right" width="430" height="189" src="https://github.com/Tectors/fn-archive/blob/master/.github/source/dependents/gen.33.00.svg">
 </a>
 
 ### 📜 Manifests
