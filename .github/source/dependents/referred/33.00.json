@@ -13,6 +13,30 @@
             }
         },
         {
+            "fileCount": 36,
+            "guid": "2D7CC66E132AF5D216B481F2D0B56EB7",
+            "hasHighResTextures": false,
+            "key": "0xD4E0770E6D14412BA6138AAB370E65A535A0C756E312A385137FACDD7A3856EE",
+            "keychain": "2D7CC66E132AF5D216B481F2D0B56EB7:1OB3Dm0UQSumE4qrNw5lpTWgx1bjEqOFE3+s3Xo4Vu4=",
+            "name": "pakchunk1002-WindowsClient.utoc",
+            "size": {
+                "formatted": "3.3 MB",
+                "raw": 3429766
+            }
+        },
+        {
+            "fileCount": 22,
+            "guid": "6F6C4D2FDC4CE08C906A1D23BE9271F3",
+            "hasHighResTextures": false,
+            "key": "0x58DB401A134BEC96B9B8244CB9240EEF84D5EEF33091B48C49E5F213F0A63B2C",
+            "keychain": "6F6C4D2FDC4CE08C906A1D23BE9271F3:WNtAGhNL7Ja5uCRMuSQO74TV7vMwkbSMSeXyE/CmOyw=",
+            "name": "pakchunk1005-WindowsClient.utoc",
+            "size": {
+                "formatted": "1.3 MB",
+                "raw": 1370534
+            }
+        },
+        {
             "fileCount": 53,
             "guid": "C98E633AA0E95A61566731B2BC1572E5",
             "hasHighResTextures": true,
@@ -38,16 +62,6 @@
             }
         },
         {
-            "fileCount": 36,
-            "guid": "2D7CC66E132AF5D216B481F2D0B56EB7",
-            "hasHighResTextures": false,
-            "name": "pakchunk1002-WindowsClient.utoc",
-            "size": {
-                "formatted": "3.3 MB",
-                "raw": 3429766
-            }
-        },
-        {
             "fileCount": 768,
             "guid": "35182C05BA21A7373CD33B20303E6944",
             "hasHighResTextures": true,
@@ -65,16 +79,6 @@
             "size": {
                 "formatted": "1.6 MB",
                 "raw": 1730102
-            }
-        },
-        {
-            "fileCount": 22,
-            "guid": "6F6C4D2FDC4CE08C906A1D23BE9271F3",
-            "hasHighResTextures": false,
-            "name": "pakchunk1005-WindowsClient.utoc",
-            "size": {
-                "formatted": "1.3 MB",
-                "raw": 1370534
             }
         },
         {
