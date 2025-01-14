@@ -8,6 +8,6 @@
 
 Welcome to **fn-archive** that holds archives of **Fortnite** manifests, encryption keys, mappings, and metadata! This repository is automatically updated using [GitHub Actions](https://docs.github.com/en/actions) and utilizes nested Markdown files for organization.
 
-<a href="https://github.com/Tectors/fn-archive/blob/master/builds/33.11.md">
-  <img width="430" height="189" src="https://github.com/Tectors/fn-archive/blob/master/.github/source/dependents/gen.33.11.svg">
+<a href="https://github.com/Tectors/fn-archive/blob/master/builds/33.20.md">
+  <img width="430" height="189" src="https://github.com/Tectors/fn-archive/blob/master/.github/source/dependents/gen.33.20.svg">
 </a>
