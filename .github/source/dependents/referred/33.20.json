@@ -1,5 +1,30 @@
 {
-    "dynamicKeys": [],
+    "dynamicKeys": [
+        {
+            "fileCount": 491,
+            "guid": "3D738885316A0BCFE38A3B60108D4195",
+            "hasHighResTextures": true,
+            "key": "0x60B3BDCA329E4DC3B199C59AC56E500ABBBFA25DA6B1547EFC0F6701B904F8E1",
+            "keychain": "3D738885316A0BCFE38A3B60108D4195:YLO9yjKeTcOxmcWaxW5QCru/ol2msVR+/A9nAbkE+OE=",
+            "name": "pakchunk1002-WindowsClient.utoc",
+            "size": {
+                "formatted": "20.5 MB",
+                "raw": 21490548
+            }
+        },
+        {
+            "fileCount": 206,
+            "guid": "691EE5E7D12D2AAB8094DC5C5C3294EA",
+            "hasHighResTextures": true,
+            "key": "0x1DF9C58C2FBF1122FBC37AAAB15EE55DEFBF486400449227009DB11D766F1C90",
+            "keychain": "691EE5E7D12D2AAB8094DC5C5C3294EA:HfnFjC+/ESL7w3qqsV7lXe+/SGQARJInAJ2xHXZvHJA=",
+            "name": "pakchunk1005-WindowsClient.utoc",
+            "size": {
+                "formatted": "6.2 MB",
+                "raw": 6499750
+            }
+        }
+    ],
     "mainKey": "0x61D4FD0F3AC7768A08E82A99D275A13762A299FCC28CCF53C46BB221BB90D2B8",
     "unloaded": [
         {
@@ -23,16 +48,6 @@
             }
         },
         {
-            "fileCount": 491,
-            "guid": "3D738885316A0BCFE38A3B60108D4195",
-            "hasHighResTextures": true,
-            "name": "pakchunk1002-WindowsClient.utoc",
-            "size": {
-                "formatted": "20.5 MB",
-                "raw": 21490548
-            }
-        },
-        {
             "fileCount": 82,
             "guid": "47CCB9DF0EE91BDE66F94F73D0F7C9D3",
             "hasHighResTextures": true,
@@ -50,16 +65,6 @@
             "size": {
                 "formatted": "30.9 MB",
                 "raw": 32421732
-            }
-        },
-        {
-            "fileCount": 206,
-            "guid": "691EE5E7D12D2AAB8094DC5C5C3294EA",
-            "hasHighResTextures": true,
-            "name": "pakchunk1005-WindowsClient.utoc",
-            "size": {
-                "formatted": "6.2 MB",
-                "raw": 6499750
             }
         },
         {
