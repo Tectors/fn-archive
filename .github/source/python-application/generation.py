@@ -40,11 +40,21 @@ import json
 # NOTE: That is basically what it does in a nutshell
 # NOTE: Each part is labled if you are needing help
 
+generated_svg_markdown_template = (
+    '<picture>\n  <img '
+    'src="https://raw.githubusercontent.com/Tectors/fn-archive/master/.github/source/dependents/gen.{version_number}.svg" '
+    'width="360" height="155">\n'
+    '</picture>\n\n'
+    '> <!--- Spacer inbetween version -->\n'
+    '\n'
+    '> {long_version}\n'
+)
+
 # These will make writing mark-down files eaiser
 markdown_keys = ''
 manifest_readme_string_start = '## *Manifests*\n'
-manifest_readme_string = '| Label | Hash | Route |\n| - | - | - |\n'
-mappings_readme_string = "\n| Label | Compression Method | .usmap |\n| - | - | - |\n"
+manifest_readme_string = '| Label | `Hash` | `Route` |\n| - | - | - |\n'
+mappings_readme_string = "| Label | Compression Method | `.usmap` |\n| - | - | - |\n"
 
 _text = ''
 
@@ -88,7 +98,7 @@ env_file = os.getenv('GITHUB_ENV')
 dynamicKeys = []
 
 # NOTE: Since the dynamicKeys array doesn't include the main key, so we have to add it manually
-markdown_keys += f'> *{chain["mainKey"]}*\n\n'
+markdown_keys += f'#### *AES Key*\n```\n{chain["mainKey"]}\n```\n\n'
 dynamicKeys.append(chain["mainKey"])
 
 editor_preferences = '('
@@ -108,13 +118,13 @@ for package in chain['dynamicKeys']:
     markdown_content = '  '
     
     for content in pak_content:
-        markdown_content += f'<img src="https://raw.githubusercontent.com/Tectors/fn-archive/master/.github/source/dependents/referred/{content}.svg" width="100"> '
+        markdown_content += f'<picture><img src="https://raw.githubusercontent.com/Tectors/fn-archive/master/.github/source/dependents/referred/{content}.svg" width="100"></picture> '
     if pak_content.__len__() > 0:
         markdown_content += '\n'
 
-    markdown_keys += drop_down.format(package['name'], f' > \n    {key}\n    KEYCHAIN: {package["keychain"]}\n\n{markdown_content}')
+    markdown_keys += drop_down.format(package['name'], f'  <br>\n\n  ```\n  {key}\n  {package["keychain"]}\n  ```\n\n{markdown_content}')
 
-manifest_readme_string_start += f"<details>\n  <summary>Editor Preferences</summary>\n\n > \n    {editor_preferences.rsplit(',', 1)[0] + ')'}\n</details>\n\n"
+manifest_readme_string_start += f"<details>\n  <summary>Editor Preferences</summary>\n\n> <!--- Spacing that adds ``` markdown -->\n    {editor_preferences.rsplit(',', 1)[0] + ')'}\n</details>\n\n"
 
 # | Variables defined: dynamicKeys, parsed, chain
 # NOTE: }
@@ -170,7 +180,7 @@ manifest_readme_string = manifest_readme_string_start + manifest_readme_string
 versioning = f"{parsed['type']}-{parsed['version']}-CL-{parsed['netcl']}-Windows"
 
 # This adds in the thumbnail (scale-able file) into the mark-down file
-markdown_content = f'<a href="#manifests">\n  <img style="pointer-events: none" src="https://raw.githubusercontent.com/Tectors/fn-archive/master/.github/source/dependents/gen.{parsed["version"]}.svg" width="360" height="155"\\>\n</a>\n\n >  \n  \n  > {versioning}\n'
+markdown_content = generated_svg_markdown_template.replace("{version_number}", parsed["version"]).replace("{long_version}", versioning)
 markdown_content += '\n' + manifest_readme_string + '\n' + mappings_readme_string + '\n---\n\n' + markdown_keys
 
 # NOTE: }
@@ -189,5 +199,6 @@ with open('README.md', "w", encoding="utf-8") as f:
 # NOTE: }
 # badge_gen_usage was here <-------
 
-with open(env_file, "a") as myfile:
-    myfile.write(f"version_build={text}{parsed['version']}-CL-{parsed['netcl']}\" -m \"{_text}\"")
+if env_file != None:
+    with open(env_file, "a") as myfile:
+        myfile.write(f"version_build={text}{parsed['version']}-CL-{parsed['netcl']}\" -m \"{_text}\"")
