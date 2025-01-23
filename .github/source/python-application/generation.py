@@ -98,7 +98,7 @@ env_file = os.getenv('GITHUB_ENV')
 dynamicKeys = []
 
 # NOTE: Since the dynamicKeys array doesn't include the main key, so we have to add it manually
-markdown_keys += f'#### *AES Key*\n```\n{chain["mainKey"]}\n```\n\n'
+markdown_keys += f'```\n{chain["mainKey"]}\n```\n\n'
 dynamicKeys.append(chain["mainKey"])
 
 editor_preferences = '('
