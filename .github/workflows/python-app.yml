@@ -58,5 +58,5 @@ jobs:
         git config --global user.email "webfortcf@gmail.com"
         git add .
         # "echo" returns true so the build succeeds, even if no changed files
-        git commit -m "${{ env.version_build }} || echo
+        git commit -m "${{ env.version_build }} || echo"
         git push
